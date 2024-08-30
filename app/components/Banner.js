@@ -6,9 +6,26 @@ const Banner = () => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div className="flex flex-col justify-center text-center md:text-left">
-        <h1 className="text-lg font-semibold">
-          Providing Quality Healthcare for a Brighter and Healthy Future
-        </h1>
+        <div className="space-x-1.5">
+        <span className="text-lg font-semibold text-white">
+          Providing Quality
+        </span>
+        <span className="text-[#6EAB36] text-lg font-semibold">
+          Healthcare
+        </span>
+        <span className="text-lg font-semibold">
+          for a
+        </span>
+        <span className="text-[#6EAB36] text-lg font-semibold">
+          Brighter
+        </span>
+        <span className="text-lg font-semibold">
+          and
+        </span>
+        <span className="text-[#6EAB36] text-lg font-semibold">
+          Healthy Future
+        </span>
+        </div>
         <p className="mt-2">
           At our hospital, we are dedicated to providing exceptional medical
           care to our patients and their families. Our experienced team of
@@ -28,22 +45,3 @@ const Banner = () => {
 };
 
 export default Banner;
-
-
-
-{/* <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
-  <div className="text-center md:text-left">
-    <h2 className="mb-4">
-      Providing Quality Healthcare for a Brighter and Healthy Future
-    </h2>
-    <p>
-      At our hospital, we are dedicated to providing exceptional medical care to our patients and their families. Our experienced team of medical professionals, cutting-edge technology, and compassionate approach make us a leader in the healthcare industry.
-    </p>
-  </div>
-  <div className="relative flex justify-center md:justify-end">
-    <Image src={iVector} alt="Banner" className="w-3/4 md:w-1/2 lg:w-1/3" />
-    <div className="absolute top-[-60px] w-3/4 md:w-1/2 lg:w-1/3">
-      <Image src={iBannerDoctor} alt="Banner" className="w-full" />
-    </div>
-  </div>
-</div> */}
