@@ -7,12 +7,14 @@ const Header = () => {
         <div className="flex justify-between">
             <Image src={iLogo} alt=""/>
 
-            <div className='flex items-center justify-center space-x-3'>
-                <div>Home</div>
-                <div>Service</div>
-                <div>Contact us</div>
-                <div>Help</div>
-                <div>Blogs</div>
+            <div className='flex items-center justify-center space-x-10 text-xl font-semibold'>
+                <div className="cursor-pointer">Home</div>
+                <div className="cursor-pointer">Service</div>
+                <div className="cursor-pointer">Contact us</div>
+                <div className="cursor-pointer">Help</div>
+                <div className="cursor-pointer">Blogs</div>
+                <div className="cursor-pointer">Sing up</div>
+                <div className="cursor-pointer">Sing in</div>
             </div>
         </div>
     )
