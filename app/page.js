@@ -1,9 +1,13 @@
-import Image from "next/image";
+
+import Banner from "./components/Banner";
 
 export default function Home() {
   return (
-    <main className="">
-   
+    <main className="common-class">
+      <div className="mb-[150px]">
+
+      </div>
+      <Banner/>
     </main>
   );
 }

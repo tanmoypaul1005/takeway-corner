@@ -15,7 +15,10 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+.common-class {
+  @apply w-full gap-8 px-5 mx-auto lg:px-0 lg:w-[88%];
+  min-height: auto;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
