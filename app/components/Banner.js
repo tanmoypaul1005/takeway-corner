@@ -6,23 +6,23 @@ const Banner = () => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div className="flex flex-col justify-center text-center md:text-left">
-        <div className="space-x-1.5">
-        <span className="text-lg font-semibold text-white">
+        <div className="space-x-1.5 uppercase text-lg font-semibold">
+        <span className="text-xl font-bold text-white">
           Providing Quality
         </span>
-        <span className="text-[#6EAB36] text-lg font-semibold">
+        <span className="text-[#6EAB36]">
           Healthcare
         </span>
-        <span className="text-lg font-semibold">
+        <span className="">
           for a
         </span>
-        <span className="text-[#6EAB36] text-lg font-semibold">
+        <span className="text-[#6EAB36]">
           Brighter
         </span>
-        <span className="text-lg font-semibold">
+        <span className="">
           and
         </span>
-        <span className="text-[#6EAB36] text-lg font-semibold">
+        <span className="text-[#6EAB36]">
           Healthy Future
         </span>
         </div>
