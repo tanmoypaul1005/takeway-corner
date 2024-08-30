@@ -1,4 +1,4 @@
-import { iBannerDoctor, iVector } from "@/util/imageImports";
+import { iBannerDoctor, iProfessionals, iVector } from "@/util/imageImports";
 import Image from "next/image";
 import React from "react";
 import CommonButton from "./button/CommonButton";
@@ -34,7 +34,6 @@ const Banner = () => {
           approach make us a leader in the healthcare industry.
         </p>
         <div className="flex items-end h-full">
-
           <CommonButton btnLevel="Appointments" />
         </div>
       </div>
@@ -44,7 +43,9 @@ const Banner = () => {
         <div className="absolute top-[-50px] md:right-[40px] w-[50%]">
           <Image src={iBannerDoctor} alt="Doctor" />
         </div>
-
+        <div className="absolute bottom-16 right-32 w-[50%]">
+          <Image src={iProfessionals} alt="Doctor" />
+        </div>
       </div>
     </div>
 
