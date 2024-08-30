@@ -19,7 +19,7 @@ const Banner = () => {
 
       <div className="relative flex items-center justify-center md:items-end md:justify-end">
         <Image src={iVector} alt="Background Vector" className="w-[60%]" />
-        <div className="absolute top-[-40px] md:right-[40px] w-[50%]">
+        <div className="absolute top-[-50px] md:right-[40px] w-[50%]">
           <Image src={iBannerDoctor} alt="Doctor" />
         </div>
       </div>
