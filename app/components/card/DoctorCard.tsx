@@ -29,7 +29,7 @@ export const DoctorCard = async () => {
           </div> */}
           <div className="flex justify-between">
             <p className="text-base font-semibold text-red-400 cursor-auto">
-              {/* ${product?.price ?? 0} */} 4444
+              {/* ${product?.price ?? 0} */} MBBS, MD
             </p>
 {/* 
             {session?.user?.email && (
