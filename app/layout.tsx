@@ -19,7 +19,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className={`${inter.className} common-class`}>
-        <div className="mt-5 mb-[120px]">
+        <div className="my-5">
           <Header />
         </div>
         {children}
