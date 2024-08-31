@@ -35,7 +35,7 @@ const Banner: React.FC = () => {
           medical professionals, cutting-edge technology, and compassionate
           approach make us a leader in the healthcare industry.
         </p>
-        <div className="flex items-end h-full">
+        <div className="flex items-end justify-center h-full md:justify-start">
           <AppointmentButton/>
         </div>
       </div>
