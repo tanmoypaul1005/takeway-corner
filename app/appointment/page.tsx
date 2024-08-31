@@ -22,10 +22,10 @@ const Appointment: React.FC = () => {
           <h2 className="text-xl font-bold sm:text-4xl md:text-5xl">
             Hospital
           </h2>
-          <p className="hidden mt-4 text-sm sm:text-lg">
+          <p className="mt-4 text-sm sm:text-lg">
             We know how large objects will act, but things on a small scale.
           </p>
-          <div className="flex flex-col mt-6 space-x-4 md:flex-row">
+          <div className="flex mt-6 space-x-4">
             <button className="px-4 py-2 text-sm font-semibold text-white bg-teal-500 rounded-lg hover:bg-teal-600 sm:px-6 sm:py-3 sm:text-base">
               Get Quote Now
             </button>
