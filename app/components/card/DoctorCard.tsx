@@ -19,10 +19,10 @@ export const DoctorCard = async () => {
 
         <div className="px-3 pt-2">
           <span className="mr-3 text-xs uppercase">
-           Title
+          Consultant - Radiology & Imaging
           </span>
           <p className="block text-sm font-semibold capitalize truncate line-clamp-2">
-          Doctor Mist
+            Dr. Shoheli Sultana
           </p>
           {/* <div className="my-2">
             <CommonRating value={parseInt(product?.ratting ?? 0)} />
