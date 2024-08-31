@@ -35,12 +35,12 @@ const Banner: React.FC = () => {
           medical professionals, cutting-edge technology, and compassionate
           approach make us a leader in the healthcare industry.
         </p>
-        <div className="flex items-end justify-center h-full md:justify-start">
+        <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
           <AppointmentButton/>
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center md:items-end md:justify-end">
+      <div className="relative flex items-center justify-center mt-20 md:mt-10 md:items-end md:justify-end">
         <Image src={iVector} alt="Background Vector" className="w-[60%]" />
         <div className="absolute top-[-50px] md:right-[40px] w-[50%]">
           <Image src={iBannerDoctor} alt="Doctor" />

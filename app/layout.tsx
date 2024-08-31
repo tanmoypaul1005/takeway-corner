@@ -19,7 +19,7 @@
     return (
       <html lang="en">
         <body className={`${inter.className} common-class`}>
-          <div className="mt-5 mb-5 md:mb-20">
+          <div className="mt-5 mb-16">
             <Header />
           </div>
           {children}
