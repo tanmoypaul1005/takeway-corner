@@ -1,9 +1,11 @@
-import { iBannerDoctor, iProfessionals, iVector } from "@/util/imageImports";
+
 import Image from "next/image";
 import React from "react";
-import CommonButton from "./button/CommonButton";
+// import CommonButton from "./button/CommonButton";
+import { iBannerDoctor, iProfessionals, iVector } from "../../util/imageImports";
 
-const Banner = () => {
+
+const Banner: React.FC = () => {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       <div className="flex flex-col justify-center text-center md:text-left">
@@ -34,7 +36,7 @@ const Banner = () => {
           approach make us a leader in the healthcare industry.
         </p>
         <div className="flex items-end h-full">
-          <CommonButton btnLevel="Appointments" />
+          {/* <CommonButton btnLevel="Appointments" /> */}
         </div>
       </div>
 
@@ -48,9 +50,7 @@ const Banner = () => {
         </div>
       </div>
     </div>
-
-
   );
 };
-
 export default Banner;
+

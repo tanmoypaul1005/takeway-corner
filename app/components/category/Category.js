@@ -1,4 +1,5 @@
 import { getCategory } from '@/app/action/category';
+import { iLink } from '@/util/imageImports';
 import Image from 'next/image';
 import React from 'react'
 
@@ -14,10 +15,14 @@ const Category = async () => {
                 {
                     category?.map((cat) => {
                         return (
-                                <div key={cat._id} className="flex flex-col max-w-[250px] min-w-[250px] items-center justify-center p-5 bg-white rounded">
-                                    <div className="w-full h-44 bg-[#D6F2F2] "></div>
-                                    <h1 className="text-black">{cat.title}</h1>
+                            <div key={cat._id} className="flex flex-col max-w-[320px] min-w-[320px] p-3 bg-white rounded">
+                                <div className="w-full h-44 bg-[#D6F2F2] "></div>
+                                <h1 className=" text-[#007E85] font-bold text-xl mt-5">{cat.title}</h1>
+                                <div className="my-2 text-[#555555] text-sm font-">
+                                    Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.
                                 </div>
+                                <Image className="cursor-pointer" src={iLink} alt={cat.title} width={100} height={100} />
+                            </div>
                         )
                     })
                 }
