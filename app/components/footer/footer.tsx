@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     <footer className="py-8 text-white bg-teal-800">
       <div className="common-class">
         <div className="flex flex-wrap justify-between">
-          <div className="w-full mb-6 md:w-1/4 md:mb-0">
+          <div className="w-full mb-6 md:w-1/5 md:mb-0">
             <h2 className="text-xl font-bold">Healthcare</h2>
             <p className="mt-2">
               &copy; 2022 BRIX Templates All Rights Reserved
