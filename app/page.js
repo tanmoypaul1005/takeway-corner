@@ -5,7 +5,7 @@ import Category from "./components/category/Category";
 
 export default function Home() {
   return (
-  <main className="space-y-5">
+  <main className="space-y-10">
       <Banner/>
       <Category/>
     </main>

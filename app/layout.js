@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} common-class`}>
+      <body className={`${inter.className} common-class mb-5`}>
       <div className="mt-5 mb-[120px]">
          <Header/>
       </div>
