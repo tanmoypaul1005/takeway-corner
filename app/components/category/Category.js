@@ -14,9 +14,12 @@ const Category = async () => {
                 {
                     category?.map((cat) => {
                         return (
-                                <div key={cat._id} className="flex flex-col max-w-[250px] min-w-[250px] items-center justify-center p-5 bg-white rounded">
+                                <div key={cat._id} className="flex flex-col max-w-[320px] min-w-[320px] items-center justify-center p-3 bg-white rounded">
                                     <div className="w-full h-44 bg-[#D6F2F2] "></div>
                                     <h1 className="text-black">{cat.title}</h1>
+                                    <div className="text-[#555555] text-base font-medium">
+                                    Lorem ipsum dolor sit amet consecte tur adipiscing elit semper dalaracc lacus vel facilisis volutpat est velitolm.
+                                    </div>
                                 </div>
                         )
                     })
