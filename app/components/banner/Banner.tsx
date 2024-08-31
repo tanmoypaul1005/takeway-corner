@@ -1,8 +1,8 @@
 
 import Image from "next/image";
 import React from "react";
-// import CommonButton from "./button/CommonButton";
-import { iBannerDoctor, iProfessionals, iVector } from "../../util/imageImports";
+import { iBannerDoctor, iProfessionals, iVector } from "../../../util/imageImports";
+import AppointmentButton from "../../appointment/AppointmentButton";
 
 
 const Banner: React.FC = () => {
@@ -36,7 +36,7 @@ const Banner: React.FC = () => {
           approach make us a leader in the healthcare industry.
         </p>
         <div className="flex items-end h-full">
-          {/* <CommonButton btnLevel="Appointments" /> */}
+          <AppointmentButton/>
         </div>
       </div>
 
