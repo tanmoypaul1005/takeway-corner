@@ -31,7 +31,7 @@ const AppointmentForm:React.FC = () => {
             <label className="block mb-2 font-medium text-gray-700">
               Department *
             </label>
-            <select className="w-full p-2 border rounded-lg sm:p-3">
+            <select className="w-full p-2 text-gray-700 border rounded-lg sm:p-3">
               <option>Please Select</option>
               <option>Cardiology</option>
               <option>Neurology</option>
@@ -43,7 +43,7 @@ const AppointmentForm:React.FC = () => {
             <label className="block mb-2 font-medium text-gray-700">
               Time *
             </label>
-            <select className="w-full p-2 border rounded-lg sm:p-3">
+            <select className="w-full p-2 text-gray-700 border rounded-lg sm:p-3">
               <option>4:00 Available</option>
               <option>4:30 Available</option>
               <option>5:00 Available</option>

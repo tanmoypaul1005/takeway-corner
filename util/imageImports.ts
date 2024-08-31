@@ -5,4 +5,4 @@ export { default as iBannerDoctor } from "../public/home/bannerDoctor.svg";
 export { default as iProfessionals } from "../public/home/professionals.svg";
 export { default as iLink } from "../public/category/Link.svg";
 export { default as iAppointmentBanner } from "../public/appointment/appointmentBanner.svg";
-
+export { default as iMenu } from "../public/menu.png";
