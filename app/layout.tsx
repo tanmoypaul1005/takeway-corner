@@ -2,6 +2,7 @@
   import "./globals.css";
   import Header from "./components/header/Header";
   import React, { ReactNode } from "react";
+import Footer from "./components/footer/footer";
 
   const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +19,14 @@
   const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
     return (
       <html lang="en">
-        <body className={`${inter.className} common-class`}>
+        <body className={`${inter.className}`}>
+          <div className="common-class">
           <div className="mt-5 mb-16">
             <Header />
           </div>
           {children}
+          </div>
+          <Footer/>
         </body>
       </html>
     );
