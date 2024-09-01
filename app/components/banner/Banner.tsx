@@ -48,6 +48,11 @@ const Banner: React.FC = () => {
         <div className="absolute bottom-16 right-32 w-[50%]">
           <Image src={iProfessionals} alt="Doctor" />
         </div>
+
+        <div className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-10 right-10">
+          <div className="text-[#007E85] text-base font-bold">24/7</div>  
+          <div className="text-black">service</div>  
+        </div>
       </div>
     </div>
   );
