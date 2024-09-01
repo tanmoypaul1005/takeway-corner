@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { iLogo } from "../../../util/imageImports";
+import { iFacebookIcon, iInstagram, iLinkedIn, iLogo, iTwitter, iYoutube } from "../../../util/imageImports";
 
 const Footer: React.FC = () => {
   return (
@@ -110,8 +110,8 @@ const Footer: React.FC = () => {
             <ul className="mt-2 space-y-2">
               <li>
                 <a href="#" className="flex items-center hover:underline">
-                  <img
-                    src="facebook-icon.svg"
+                  <Image
+                    src={iFacebookIcon}
                     alt="Facebook"
                     className="w-4 h-4 mr-2"
                   />
@@ -120,8 +120,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="flex items-center hover:underline">
-                  <img
-                    src="twitter-icon.svg"
+                  <Image
+                    src={iTwitter}
                     alt="Twitter"
                     className="w-4 h-4 mr-2"
                   />
@@ -130,8 +130,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="flex items-center hover:underline">
-                  <img
-                    src="instagram-icon.svg"
+                  <Image
+                    src={iInstagram}
                     alt="Instagram"
                     className="w-4 h-4 mr-2"
                   />
@@ -140,8 +140,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="flex items-center hover:underline">
-                  <img
-                    src="linkedin-icon.svg"
+                  <Image
+                    src={iLinkedIn}
                     alt="LinkedIn"
                     className="w-4 h-4 mr-2"
                   />
@@ -150,8 +150,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="flex items-center hover:underline">
-                  <img
-                    src="youtube-icon.svg"
+                  <Image
+                    src={iYoutube}
                     alt="YouTube"
                     className="w-4 h-4 mr-2"
                   />
