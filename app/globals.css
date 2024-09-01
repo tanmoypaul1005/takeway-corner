@@ -8,6 +8,23 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.responsiveImage {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+  .responsiveImage {
+    max-width: 400px; /* Adjust as needed */
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsiveImage {
+    max-width: 500px; /* Adjust as needed */
+  }
+}
+
 /* TestimonialSlider.css */
 .swiper-button-prev:after,
 .swiper-rtl .swiper-button-next:after {
