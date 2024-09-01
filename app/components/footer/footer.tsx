@@ -1,4 +1,6 @@
+import Image from "next/image";
 import React from "react";
+import { iLogo } from "../../../util/imageImports";
 
 const Footer: React.FC = () => {
   return (
@@ -6,7 +8,9 @@ const Footer: React.FC = () => {
       <div className="common-class">
         <div className="flex flex-wrap justify-between">
           <div className="w-full mb-6 md:w-1/5 md:mb-0">
-            <h2 className="text-xl font-bold">Healthcare</h2>
+            <div className="">
+              <Image style={{maxWidth:200 ,minWidth:200, maxHeight:50, minHeight:50}} src={iLogo} alt="BRIX" className="responsiveImage" />
+            </div>
             <p className="mt-2">
               &copy; 2022 BRIX Templates All Rights Reserved
             </p>
