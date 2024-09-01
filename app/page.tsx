@@ -1,11 +1,7 @@
-
-// import Banner from "./components/Banner";
-// import Category from "./components/category/Category";
 import Appointment from "./appointment/page";
 import Banner from "./components/banner/Banner";
 import TestimonialSlider from "./components/testimonials/TestimonialSlider";
 import Doctor from "./doctor/page";
-
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +10,7 @@ const Home: React.FC = () => {
       <Appointment/>
       <Doctor/>
       <TestimonialSlider/>
+      <div className="mb-10"></div>
     </main>
   );
 }
