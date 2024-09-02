@@ -4,12 +4,12 @@ import connectMongo from "../../../util/connectMongo";
 
 export async function POST(request) {
   try{
-    const new_doctor = await request.json();
+    const new_testimonial = await request.json();
 
     await connectMongo();
    
-    const newDoctor = new Testimonial({...new_doctor});
-    const response = await newDoctor.save();
+    const newTestimonial = new Testimonial({...new_testimonial});
+    const response = await newTestimonial.save();
 
     return Response.json({
       success: true,
