@@ -34,7 +34,7 @@ export async function GET() {
 
     await connectMongo();
    
-    const category = new Category.find({});
+    const category =await Category.find({});
 
     return Response.json({
       success: true,
