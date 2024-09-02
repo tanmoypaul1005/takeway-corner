@@ -15,7 +15,6 @@ const testimonialSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-
   comment: {
         type: String,
         required: true,

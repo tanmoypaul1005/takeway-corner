@@ -1,20 +1,22 @@
+import Doctor from "../../../models/Doctor";
+import connectMongo from "../../../util/connectMongo";
+
 export const dynamic = "force-dynamic";
-import Category from "@/models/Category";
-import connectMongo from "@/util/connectMongo";
+
 
 export async function POST(request) {
   try{
-    const new_category = await request.json();
+    const new_doctor = await request.json();
 
     await connectMongo();
    
-    const newCategory = new Category({...new_category});
-    const response = await newCategory.save();
+    const newDoctor = new Doctor({...new_doctor});
+    const response = await newDoctor.save();
 
     return Response.json({
       success: true,
       status: 200,
-      message: "Category Created Successfully",
+      message: "Doctor Created Successfully",
       data: response,
     });
   }catch (err) {

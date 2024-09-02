@@ -53,6 +53,10 @@ const doctorSchema = new mongoose.Schema({
             required: true,
         }
     },
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category"
+    },
     ratings: {
         type: Number,
         min: 0,
