@@ -2,10 +2,12 @@
 import Image from "next/image";
 import React from "react";
 import {
+  iBanner,
   iBannerDoctor,
   iProfessionals,
   iVector,
 } from "../../../util/imageImports";
+import { Player } from "@lottiefiles/react-lottie-player";
 import AppointmentButton from "../../appointment/AppointmentButton";
 import { motion } from "framer-motion";
 
@@ -23,13 +25,26 @@ const Banner: React.FC = () => {
           <span className="">and</span>
           <span className="text-[#6EAB36]">Healthy Future</span>
         </div>
+        
         <p className="mt-2">
           At our hospital, we are dedicated to providing exceptional medical
           care to our patients and their families. Our experienced team of
           medical professionals, cutting-edge technology, and compassionate
           approach make us a leader in the healthcare industry.
         </p>
+        {/* Lottie Animation */}
+        <div className="flex items-start justify-start p-0 mb-5">
+  <Player
+    autoplay
+    loop
+    src={iBanner}
+    style={{margin:"-20px", width: "100%", height: "50%" }}
+  />
+</div>
+
+        
         <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
+          
           <AppointmentButton />
         </div>
       </div>
