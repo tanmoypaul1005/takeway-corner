@@ -1,5 +1,5 @@
 import React from 'react'
-import DoctorCard from '../components/card/DoctorCard'
+import DoctorCard from './components/DoctorCard'
 import { getDoctors } from '../action/doctor';
 
 const Doctor = async() => {
