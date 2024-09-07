@@ -11,7 +11,10 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@lottiefiles/react-lottie-player": "^3.5.4",
     "@mui/material": "^6.0.1",
+    "framer-motion": "^11.5.4",
+    "lottie-react": "^2.4.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.6.0",
     "next": "14.2.7",

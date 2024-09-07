@@ -14,7 +14,7 @@ export async function POST(request) {
     return Response.json({
       success: true,
       status: 200,
-      message: "Doctor Created Successfully",
+      message: "Testimonial Created Successfully",
       data: response,
     });
   }catch (err) {
