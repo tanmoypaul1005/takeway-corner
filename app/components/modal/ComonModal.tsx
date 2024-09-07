@@ -1,19 +1,19 @@
 "use client";
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import Box from "@mui/material/Box";
 import Image from "next/image";
-import Modal from '@mui/material/Modal';
-import { iCommon } from '../../../util/imageImports';
+import Modal from "@mui/material/Modal";
+import { iCommon } from "../../../util/imageImports";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: '90%', // Default width for small screens
-  maxWidth: '900px', // Maximum width for larger screens
-  bgcolor: 'black',
-  border: '1px solid #ffffff',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "90%", // Default width for small screens
+  maxWidth: "900px", // Maximum width for larger screens
+  bgcolor: "black",
+  border: "1px solid #ffffff",
   // boxShadow: 24,
   p: 0,
   borderRadius: "10px",
@@ -28,7 +28,13 @@ interface CommonModalProps {
   title?: string;
 }
 
-const CommonModal: React.FC<CommonModalProps> = ({ open, setOpen, content = <></>, padding = "p-5", title = "" }) => {
+const CommonModal: React.FC<CommonModalProps> = ({
+  open,
+  setOpen,
+  content = <></>,
+  padding = "p-8",
+  title = "",
+}) => {
   const handleClose = () => setOpen(false);
 
   return (
@@ -42,14 +48,24 @@ const CommonModal: React.FC<CommonModalProps> = ({ open, setOpen, content = <></
         <div className={`relative ${padding} text-white`}>
           <Image
             onClick={handleClose}
-            style={{ maxWidth: "20px", minWidth: "20px", maxHeight: "20px", minHeight: "20px", cursor: "pointer" }}
-            className='absolute cursor-pointer top-3 right-3'
+            style={{
+              maxWidth: "20px",
+              minWidth: "20px",
+              maxHeight: "20px",
+              minHeight: "20px",
+              cursor: "pointer",
+            }}
+            className="absolute cursor-pointer top-3 right-3"
             src={iCommon}
-            alt=''
+            alt=""
             width={10}
             height={10}
           />
-          {title && <div className='text-3xl font-bold text-center text-white'>{title}</div>}
+          {title && (
+            <div className="text-3xl font-bold text-center text-white">
+              {title}
+            </div>
+          )}
           {content}
         </div>
       </Box>
