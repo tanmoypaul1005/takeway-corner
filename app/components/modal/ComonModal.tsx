@@ -3,7 +3,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Image from "next/image";
 import Modal from "@mui/material/Modal";
-import { iCommon } from "../../../util/imageImports";
+import { iCancel } from "../../../util/imageImports";
 
 const style = {
   position: "absolute",
@@ -56,7 +56,7 @@ const CommonModal: React.FC<CommonModalProps> = ({
               cursor: "pointer",
             }}
             className="absolute cursor-pointer top-3 right-3"
-            src={iCommon}
+            src={iCancel}
             alt=""
             width={10}
             height={10}

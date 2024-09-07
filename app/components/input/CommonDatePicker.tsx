@@ -15,7 +15,7 @@ const CommonDatePicker: React.FC<CommonDatePickerProps> = ({
   onChange = () => {},
 }) => {
   return (
-    <div>
+    <div className="">
       <div className="block mb-2 font-medium text-white">Date</div>
       <div className="relative w-full">
         <DatePicker
@@ -23,7 +23,7 @@ const CommonDatePicker: React.FC<CommonDatePickerProps> = ({
           onChange={onChange}
           placeholderText="Select Dates"
           dateFormat="MM/dd/yyyy"
-          className="pr-4 pl-[37px] w-full py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none"
+          className="pr-4 pl-[37px] max-w-[122vh] min-w-[122vh] py-2 text-gray-700 border border-gray-300 rounded-md focus:outline-none"
         />
         <div className="absolute left-3.5 top-[11px]">
           <Image src={iCalender} alt="Calendar icon" />
