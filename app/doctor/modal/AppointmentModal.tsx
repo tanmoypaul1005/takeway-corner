@@ -2,6 +2,7 @@
 import React from 'react';
 import CommonModal from '../../components/modal/ComonModal';
 import CommonInput from '../../components/input/CommonInput';
+import CommonDatePicker from '../../components/input/CommonDatePicker';
 
 interface AppointmentModalProps {
   open: boolean;
@@ -23,6 +24,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ open, setOpen }) =>
             <CommonInput placeHolder='Enter your Name' level='Name'/>
             <CommonInput placeHolder='Enter your Email' level='Email'/>
             <CommonInput placeHolder='Enter your Phone' level='Phone'/>
+            <CommonDatePicker/>
         </form>
         </>}
       />

@@ -7,7 +7,7 @@ export { default as iLink } from "../public/category/Link.svg";
 export { default as iAppointmentBanner } from "../public/appointment/appointmentBanner.svg";
 export { default as iMenu } from "../public/menu.png";
 export { default as iDummyDoctor } from "../public/home/dumyDoctor.svg";
-export { default as iCommon } from "../public/common/cancel.png";
+export { default as iCalender } from "../public/common/calender.svg";
 
 export { default as iFacebookIcon } from "../public/footer/Facebook.svg";
 export { default as iTwitter } from "../public/footer/Twitter.svg"; 
