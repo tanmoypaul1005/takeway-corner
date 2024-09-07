@@ -1,6 +1,7 @@
 import Appointment from "../../../models/Appointment";
 import Doctor from "../../../models/Doctor";
 import connectMongo from "../../../util/connectMongo";
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
 // Add Appointment Function with Time Conflict Validation , Add Appointment Function (with 30-minute duration constraint)
 export const addAppointment = async (body) => {
@@ -62,26 +63,9 @@ export const addAppointment = async (body) => {
 };
 
 
-
-// Define the type for time slots
-interface TimeSlot {
-    start: string;  // 'HH:mm'
-    end: string;    // 'HH:mm'
-    available: boolean;
-}
-
-// Define the type for appointment documents
-interface AppointmentDocument extends Document {
-    doctor: string;
-    appointmentTime: {
-        start: string;  // 'HH:mm'
-        end: string;    // 'HH:mm'
-    };
-}
-
 // Helper function to generate time slots (30-minute intervals)
-export const generateTimeSlots = (startTime: Date, endTime: Date, intervalMinutes: number = 30): TimeSlot[] => {
-    const slots: TimeSlot[] = [];
+export const generateTimeSlots = (startTime, endTime, intervalMinutes = 30) => {
+    const slots = [];
     let currentTime = new Date(startTime);
 
     while (currentTime < endTime) {
@@ -98,54 +82,57 @@ export const generateTimeSlots = (startTime: Date, endTime: Date, intervalMinute
 };
 
 // Function to check available time slots for a doctor (no appointmentDate needed)
-export const findAvailableTimeSlots = async (doctorId: string): Promise<TimeSlot[] | { success: boolean; message: string }> => {
+export const findAvailableTimeSlots = async (doctorId) => {
     try {
+        console.log("doctorId", doctorId);
+        await connectMongo();
+        const appointments = await Appointment.find({doctor:  doctorId});
+        return  appointments
         // Define working hours (e.g., 09:00 AM to 05:00 PM)
-        const workingStart = new Date();
-        workingStart.setHours(9, 0, 0, 0); // Set start time to 09:00 AM
-        const workingEnd = new Date();
-        workingEnd.setHours(17, 0, 0, 0); // Set end time to 05:00 PM
+        // const workingStart = new Date();
+        // workingStart.setHours(9, 0, 0, 0); // Set start time to 09:00 AM
+        // const workingEnd = new Date();
+        // workingEnd.setHours(17, 0, 0, 0); // Set end time to 05:00 PM
 
-        // Generate all possible 30-minute time slots within working hours
-        let timeSlots = generateTimeSlots(workingStart, workingEnd);
+        // // Generate all possible 30-minute time slots within working hours
+        // let timeSlots = generateTimeSlots(workingStart, workingEnd);
+        // const objectId = new mongoose.Types.ObjectId(doctorId);
+        // // Retrieve all appointments for the doctor (regardless of date)
+        // const appointments = await Appointment.find({doctor:  objectId});
 
-        // Retrieve all appointments for the doctor (regardless of date)
-        const appointments = await Appointment.find({
-            doctor: doctorId
-        }) as AppointmentDocument[];
+        // // Mark time slots as unavailable if they overlap with existing appointments
+        // timeSlots = timeSlots.map((slot) => {
+        //     const slotStart = new Date();
+        //     slotStart.setHours(...slot.start.split(':'), 0); // Create a Date object for slot start time
 
-        // Mark time slots as unavailable if they overlap with existing appointments
-        timeSlots = timeSlots.map((slot) => {
-            const slotStart = new Date();
-            slotStart.setHours(...slot.start.split(':').map(Number), 0); // Create a Date object for slot start time
+        //     const slotEnd = new Date();
+        //     slotEnd.setHours(...slot.end.split(':'), 0); // Create a Date object for slot end time
 
-            const slotEnd = new Date();
-            slotEnd.setHours(...slot.end.split(':').map(Number), 0); // Create a Date object for slot end time
+        //     const isConflict = appointments.some(appointment => {
+        //         const appStart = new Date();
+        //         appStart.setHours(...appointment.appointmentTime.start.split(':'), 0); // Appointment start time
 
-            const isConflict = appointments.some(appointment => {
-                const appStart = new Date();
-                appStart.setHours(...appointment.appointmentTime.start.split(':').map(Number), 0); // Appointment start time
+        //         const appEnd = new Date();
+        //         appEnd.setHours(...appointment.appointmentTime.end.split(':'), 0); // Appointment end time
 
-                const appEnd = new Date();
-                appEnd.setHours(...appointment.appointmentTime.end.split(':').map(Number), 0); // Appointment end time
+        //         // Check if the slot overlaps with any existing appointment
+        //         return slotStart < appEnd && slotEnd > appStart;
+        //     });
 
-                // Check if the slot overlaps with any existing appointment
-                return slotStart < appEnd && slotEnd > appStart;
-            });
+        //     return {
+        //         ...slot,
+        //         available: !isConflict // If conflict, mark as unavailable
+        //     };
+        // });
 
-            return {
-                ...slot,
-                available: !isConflict // If conflict, mark as unavailable
-            };
-        });
-
-        return timeSlots;
+        // return timeSlots;
 
     } catch (error) {
         console.error("Error finding available time slots:", error);
-        return { success: false, message: "Error finding available time slots", error: error.message };
+        return { success: false, message: "Error finding available time slots", error };
     }
 };
+
 
 
 

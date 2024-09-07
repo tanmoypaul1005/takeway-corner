@@ -1,6 +1,6 @@
 import mongoose, { Mongoose } from 'mongoose';
 
-const MONGO_URI: string | undefined = process.env.MONGODB_URI;
+const MONGO_URI: string | undefined = process.env.MONGODB_URI ?? process.env.NEXT_PUBLIC_BASE_URL_MONGODB_URI;
 
 interface Cached {
   connection?: Mongoose;
