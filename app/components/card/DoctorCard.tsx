@@ -8,7 +8,7 @@ export const DoctorCard = async ({ doctor }) => {
 
   return (
     <Link href={`/doctor/${doctor?._id}`}>
-      <div className="relative w-64 py-5 text-white duration-500 bg-gray-800 shadow-md sm:w-full bg-cCommonBg rounded-xl hover:scale-105 hover:shadow-xl">
+      <div className="relative w-64 h-full py-5 text-white duration-500 bg-gray-800 shadow-md sm:w-full bg-cCommonBg rounded-xl hover:scale-105 hover:shadow-xl">
         <Image
           style={{ minHeight: "120px", maxHeight: "120px" }}
           alt={"Product Image"}
@@ -19,7 +19,7 @@ export const DoctorCard = async ({ doctor }) => {
         />
 
         <div className="px-3 pt-2">
-          <span className="mr-3 text-[10px] uppercase">
+          <span className="mr-3 text-[10px] uppercase line-clamp-1">
             {doctor?.specialization}
           </span>
           <p className="block text-base font-semibold capitalize truncate line-clamp-2">
