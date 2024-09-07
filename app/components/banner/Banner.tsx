@@ -52,9 +52,13 @@ const Banner: React.FC = () => {
           <Image src={iBannerDoctor} alt="Doctor" />
         </motion.div>
         <motion.div
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          initial={{ scale: 0 }}
+          animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
+          transition={{
+            duration: 1,
+            repeat: Infinity, // Repeats endlessly
+            repeatType: "mirror", // Mirror scale animation
+          }}
           className="absolute bottom-16 right-32 w-[50%]"
         >
           <Image src={iProfessionals} alt="Doctor" />
@@ -62,8 +66,12 @@ const Banner: React.FC = () => {
 
         <motion.div
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.5, delay: 1.5 }}
+          animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
+          transition={{
+            duration: 1,
+            repeat: Infinity, // Repeats endlessly
+            repeatType: "mirror", // Mirror scale animation
+          }}
           className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-10 right-10"
         >
           <div className="text-[#007E85] text-base font-bold">24/7</div>
@@ -74,6 +82,3 @@ const Banner: React.FC = () => {
   );
 };
 export default Banner;
-
-
-
