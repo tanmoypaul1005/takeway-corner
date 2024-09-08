@@ -21,8 +21,6 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   setOpen,
   selectDoctor,
 }) => {
-  
-
   return (
     <div>
       <CommonModal
@@ -38,12 +36,20 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 Please enter your name to book an appointment
               </div>
             </div>
-            <form className="flex flex-col mb-5 gap-y-5">
-              <CommonInput placeHolder="Enter your Name" level="Name" />
-              <CommonInput placeHolder="Enter your Email" level="Email" />
-              <CommonInput placeHolder="Enter your Phone" level="Phone" />
-              {/* <CommonDatePicker/> */}
+            <form className="flex flex-col my-5 gap-y-5">
+              <div className="grid grid-cols-2 gap-x-4">
+                <CommonInput placeHolder="Enter your Name" level="Name" />
+                <CommonInput placeHolder="Enter your Email" level="Email" />
+              </div>
+              <div className="grid grid-cols-2 gap-x-4">
+                <CommonInput placeHolder="Enter your Phone" level="Phone" />
+                <CommonDatePicker />
+              </div>
             </form>
+
+            <div className="mb-2 text-2xl font-bold text-center text-white">
+              Available Time Slots
+            </div>
             <div className="flex flex-wrap gap-3">
               {selectDoctor?.map((timeSlot: TimeSlot, index: number) => (
                 <div
@@ -57,7 +63,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                     pointerEvents: timeSlot.available ? "auto" : "none",
                   }}
                 >
-                  {timeSlot.start} - {timeSlot.end} 
+                  {timeSlot.start} - {timeSlot.end}
                 </div>
               ))}
             </div>

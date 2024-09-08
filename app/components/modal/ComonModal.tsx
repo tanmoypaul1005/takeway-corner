@@ -18,6 +18,8 @@ const style = {
   p: 0,
   borderRadius: "10px",
   outline: "none",
+  maxHeight: "90vh", // Ensure the modal does not exceed the viewport height
+  overflow: "auto", // Enable scrolling within the modal
 };
 
 interface CommonModalProps {
