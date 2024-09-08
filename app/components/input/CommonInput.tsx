@@ -5,6 +5,9 @@ interface CommonInputProps {
   type?: string;
   placeHolder?: string;
   required?: boolean;
+  name?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const CommonInput: React.FC<CommonInputProps> = ({
@@ -12,6 +15,9 @@ const CommonInput: React.FC<CommonInputProps> = ({
   type = "text",
   placeHolder = "",
   required = false,
+  name = "",
+  value = "",
+  onChange = () => {},
 }) => {
   return (
     <div className="">
@@ -19,9 +25,12 @@ const CommonInput: React.FC<CommonInputProps> = ({
         {level} {required &&<>*</>}
       </label>
       <input
+        name={name}
+        value={value}
+        onChange={onChange}
         type={type}
         placeholder={placeHolder}
-        className="w-full text-black p-2 border rounded-lg sm:p-3"
+        className="w-full p-2 text-black border rounded-lg sm:p-3"
         required={required}
       />
     </div>
