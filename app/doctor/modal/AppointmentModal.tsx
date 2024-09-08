@@ -46,7 +46,6 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
 
 
   return (
-    <div>
       <CommonModal
         setOpen={setOpen}
         open={open}
@@ -115,7 +114,6 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
         </>
         }
       />
-    </div>
   );
 };
 
