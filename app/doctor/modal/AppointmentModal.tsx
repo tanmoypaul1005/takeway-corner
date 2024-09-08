@@ -24,7 +24,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ open, setOpen }) =>
             <CommonInput placeHolder='Enter your Name' level='Name'/>
             <CommonInput placeHolder='Enter your Email' level='Email'/>
             <CommonInput placeHolder='Enter your Phone' level='Phone'/>
-            <CommonDatePicker/>
+            {/* <CommonDatePicker/> */}
         </form>
         </>}
       />

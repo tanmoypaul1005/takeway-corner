@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import AppointmentModal from "../modal/AppointmentModal";
-import { findAvailableTimeSlots } from "../../action/appointment";
+
 
 
 interface AppointmentButtonProps {
@@ -19,14 +19,14 @@ const AppointmentButton: React.FC<AppointmentButtonProps> = ({ doctor_id }) => {
       <button
         className="mt-5 cursor-pointer outline-none focus:outline-none bg-[#007E85] h-fit text-[14px] font-semibold text-white rounded-md px-8 py-1.5 w-fit"
         onClick={async(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if(!doctor_id){
-            return
-          }
-          const data=await findAvailableTimeSlots(doctor_id?.toString());
-          await setSelectDoctor(data);
-          setShow(!isShow);
+          // e.preventDefault();
+          // e.stopPropagation();
+          // if(!doctor_id){
+          //   return
+          // }
+          // const data=await findAvailableTimeSlots(doctor_id?.toString());
+          // await setSelectDoctor(data);
+          // setShow(!isShow);
         }}
       >
         Book Appointment

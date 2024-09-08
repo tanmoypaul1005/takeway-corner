@@ -8,11 +8,11 @@ const appointmentSchema = new mongoose.Schema({
         ref: 'Doctor', // reference to the doctor
         required: true
     },
-    patient: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Patient', // assuming a Patient model exists
-        required: true
-    },
+    // patient: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Patient', // assuming a Patient model exists
+    //     required: true
+    // },
     appointmentDate: {
         type: Date,
         required: true
@@ -37,10 +37,7 @@ const appointmentSchema = new mongoose.Schema({
         enum: ['Pending', 'Confirmed', 'Cancelled', 'Completed'], 
         default: 'Pending'
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+
 },{timestamps:true});
 
 // Export Appointment model

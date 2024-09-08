@@ -2,11 +2,9 @@
 import Image from "next/image";
 import { iAppointmentBanner } from "../../util/imageImports";
 import AppointmentForm from "./AppointmentForm";
-import { findAvailableTimeSlots } from "../action/appointment";
 
 const Appointment: React.FC =async () => {
-  const data=await findAvailableTimeSlots("66dbcc299e81670a77c8b0e6");
-  console.log("data",data);
+
   return (
     <>
       <div className="relative ">
