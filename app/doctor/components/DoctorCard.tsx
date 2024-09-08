@@ -34,7 +34,7 @@ export const DoctorCard = async ({ doctor }) => {
               {doctor?.qualifications?.map((qualification) => qualification).join(", ")}
             </p>
           </div>
-          <AppointmentButton doctor_id={doctor?._id}/>
+          <AppointmentButton availableTimeSlots={doctor?.availableTimeSlots}/>
         </div>
         <div className="absolute top-0.5 right-0.5">
           {/* {product?.offer?.offerPercentage && <span className="px-2 py-1 text-xs font-semibold text-white bg-red-500 rounded-full">{product?.offer?.offerPercentage}% OFF</span>} */}

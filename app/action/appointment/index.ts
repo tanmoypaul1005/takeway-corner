@@ -1,7 +1,6 @@
 import Appointment from "../../../models/Appointment";
 import Doctor from "../../../models/Doctor";
 import connectMongo from "../../../util/connectMongo";
-import mongoose, { Schema, Document, Model } from 'mongoose';
 
 // Add Appointment Function with Time Conflict Validation , Add Appointment Function (with 30-minute duration constraint)
 export const addAppointment = async (body) => {
