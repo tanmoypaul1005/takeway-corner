@@ -85,7 +85,7 @@ const Banner: React.FC = () => {
             repeat: Infinity, // Repeats endlessly
             repeatType: "mirror", // Mirror scale animation
           }}
-          className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-10 right-10"
+          className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-28 right-12"
         >
           <div className="text-[#007E85] text-base font-bold">24/7</div>
           <div className="text-black">service</div>
