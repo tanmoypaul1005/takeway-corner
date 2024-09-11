@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import CommonModal from "../../components/modal/ComonModal";
 import CommonInput from "../../components/input/CommonInput";
 import CommonDatePicker from "../../components/input/CommonDatePicker";
+import Image from "next/image";
+import { iCheck } from "../../../util/imageImports";
 
 export interface TimeSlot {
   start: string;
@@ -22,11 +24,15 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   selectDoctor,
 }) => {
 
+  const [selectedIndex, setSelectedIndex] = useState(null)
+
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     phone: "",
     date: null,
+    start:null,
+    end:null
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -96,18 +102,35 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
           </div>
           <div className="flex flex-wrap gap-3">
             {selectDoctor?.map((timeSlot: TimeSlot, index: number) => (
+              <div 
+              onClick={() => {
+                if(!timeSlot.available){
+                  return
+                }
+                setSelectedIndex(index)
+              }}
+              className={`py-2 rounded-md  px-2
+                max-w-[135px] min-w-[135px]
+                flex items-center justify-center gap-x-1 
+                ${timeSlot.available
+                    ? `${selectedIndex === index ? "bg-green-400 text-white":"bg-white text-black cursor-pointer"} `
+                    : "bg-gray-200 cursor-not-allowed text-white "}`} key={index}>
               <div
-                key={index}
-                className={`flex max-w-[120px] min-w-[120px] justify-center items-center py-2 text-sm text-white rounded-md ${
-                  timeSlot.available
-                    ? "bg-cPrimary"
-                    : "bg-gray-400 cursor-not-allowed"
-                }`}
+                className={`flex justify-center items-center  text-sm 
+                  `}
                 style={{
                   pointerEvents: timeSlot.available ? "auto" : "none",
                 }}
               >
-                {timeSlot.start} - {timeSlot.end}
+                {timeSlot?.start} - {timeSlot?.end}
+              </div>
+{        selectedIndex === index &&      <Image 
+              style={{
+                maxHeight: "20px",
+                maxWidth: "20px",
+                minWidth:"20px",
+                minHeight:"20px"
+              }} src={iCheck} alt=""/>}
               </div>
             ))}
           </div>

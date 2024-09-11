@@ -15,7 +15,7 @@ export { default as iTwitter } from "../public/footer/Twitter.svg";
 export { default as iInstagram } from "../public/footer/Instagram.svg"; 
 export { default as iLinkedIn } from "../public/footer/LinkedIn.svg"; 
 export { default as iYoutube } from "../public/footer/YouTube.svg"
-
+export { default as iCheck } from "../public/common/check.png"
 
 //animation
 export { default as iBanner } from "../public/animation/banner.json"
