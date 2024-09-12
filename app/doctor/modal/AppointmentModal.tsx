@@ -16,6 +16,7 @@ interface AppointmentModalProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   selectDoctor?: TimeSlot[];
+  doctor_id?: string;
 }
 
 const AppointmentModal: React.FC<AppointmentModalProps> = ({
@@ -23,16 +24,15 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   setOpen,
   selectDoctor,
 }) => {
-
-  const [selectedIndex, setSelectedIndex] = useState(null)
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
     phone: "",
     date: null,
-    start:null,
-    end:null
+    start: null,
+    end: null,
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,13 +50,12 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
     });
   };
 
-
   return (
-      <CommonModal
-        setOpen={setOpen}
-        open={open}
-        content={
-          <>
+    <CommonModal
+      setOpen={setOpen}
+      open={open}
+      content={
+        <>
           <div>
             <div className="text-3xl font-bold text-center text-white">
               Book Appointment
@@ -96,51 +95,61 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
               />
             </div>
           </form>
-    
+
           <div className="mb-2 text-2xl font-bold text-center text-white">
             Available Time Slots
           </div>
           <div className="flex flex-wrap gap-3">
             {selectDoctor?.map((timeSlot: TimeSlot, index: number) => (
-              <div 
-              onClick={() => {
-                if(!timeSlot.available){
-                  return
-                }
-                setSelectedIndex(index)
-              }}
-              className={`py-2 rounded-md  px-2
+              <div
+                onClick={() => {
+                  if (!timeSlot.available) {
+                    return;
+                  }
+                  setSelectedIndex(index);
+                }}
+                className={`py-2 rounded-md  px-2
                 max-w-[135px] min-w-[135px]
                 flex items-center justify-center gap-x-1 
-                ${timeSlot.available
-                    ? `${selectedIndex === index ? "bg-green-400 text-white":"bg-white text-black cursor-pointer"} `
-                    : "bg-gray-200 cursor-not-allowed text-white "}`} key={index}>
-              <div
-                className={`flex justify-center items-center  text-sm 
-                  `}
-                style={{
-                  pointerEvents: timeSlot.available ? "auto" : "none",
-                }}
+                ${
+                  timeSlot.available
+                    ? `${
+                        selectedIndex === index
+                          ? "bg-green-400 text-white"
+                          : "bg-white text-black cursor-pointer"
+                      } `
+                    : "bg-gray-200 cursor-not-allowed text-white "
+                }`}
+                key={index}
               >
-                {timeSlot?.start} - {timeSlot?.end}
-              </div>
-{        selectedIndex === index &&      <Image 
-              style={{
-                maxHeight: "20px",
-                maxWidth: "20px",
-                minWidth:"20px",
-                minHeight:"20px"
-              }} src={iCheck} alt=""/>}
+                <div
+                  className={`flex justify-center items-center  text-sm 
+                  `}
+                  style={{
+                    pointerEvents: timeSlot.available ? "auto" : "none",
+                  }}
+                >
+                  {timeSlot?.start} - {timeSlot?.end}
+                </div>
+                {selectedIndex === index && (
+                  <Image
+                    style={{
+                      maxHeight: "20px",
+                      maxWidth: "20px",
+                      minWidth: "20px",
+                      minHeight: "20px",
+                    }}
+                    src={iCheck}
+                    alt=""
+                  />
+                )}
               </div>
             ))}
           </div>
         </>
-        }
-      />
+      }
+    />
   );
 };
 
 export default AppointmentModal;
-
-
-
