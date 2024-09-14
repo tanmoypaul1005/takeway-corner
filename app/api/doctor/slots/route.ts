@@ -29,13 +29,11 @@ export async function POST(request) {
     });
   }
 }
-
 interface TimeSlot {
   start: string;
   end: string;
   available: boolean;
 }
-
 
 const generateTimeSlots = (intervalMinutes: number = 30): TimeSlot[] => {
   const slots: TimeSlot[] = [];
