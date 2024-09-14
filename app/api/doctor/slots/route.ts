@@ -1,13 +1,41 @@
+export const dynamic = "force-dynamic";
+import Appointment from "../../../../models/Appointment";
+import Doctor from "../../../../models/Doctor";
+import connectMongo from "../../../../util/connectMongo";
 import mongoose from 'mongoose';
-import connectMongo from '../../../util/connectMongo';
-import Appointment from '../../../models/Appointment';
-import Doctor from '../../../models/Doctor';
+
+export async function POST(request) {
+  try{
+    const new_doctor = await request.json();
+
+    await connectMongo();
+   
+    const newDoctor = new Doctor({...new_doctor});
+    const response = await newDoctor.save();
+
+    return Response.json({
+      success: true,
+      status: 200,
+      message: "Doctor Created Successfully",
+      data: response,
+    });
+  }catch (err) {
+    console.error(err);
+    return Response.json({
+      success: false,
+      status: 500,
+      message: "Internal Server Error",
+      data: null,
+    });
+  }
+}
 
 interface TimeSlot {
   start: string;
   end: string;
   available: boolean;
 }
+
 
 const generateTimeSlots = (intervalMinutes: number = 30): TimeSlot[] => {
   const slots: TimeSlot[] = [];
@@ -31,9 +59,11 @@ const generateTimeSlots = (intervalMinutes: number = 30): TimeSlot[] => {
   return slots;
 };
 
-export const findAvailableTimeSlots = async (doctorId: string): Promise<TimeSlot[]> => {
+export async function GET(request) {
   await connectMongo();
-  const objectId = new mongoose.Types.ObjectId(doctorId);
+  const searchParams = request.nextUrl.searchParams;
+  const doctor_id = searchParams.get("doctor_id");
+  const objectId = new mongoose.Types.ObjectId(doctor_id);
 
   // Generate all possible 30-minute time slots within working hours
   let timeSlots = generateTimeSlots();
@@ -64,46 +94,15 @@ export const findAvailableTimeSlots = async (doctorId: string): Promise<TimeSlot
       return slotStart < appEnd && slotEnd > appStart;
     });
 
-    return {
+    return  {
       ...slot,
       available: !isConflict // If conflict, mark as unavailable
     };
   });
-
-  return timeSlots;
+  return Response.json({
+    success: false,
+    status: 500,
+    message: "Internal Server Error",
+    data: null,
+  });
 };
-
-// export const getDoctors = async () => {
-//   try {
-//     await connectMongo();
-//     const doctors = await Doctor.find({});
-
-//     // For each doctor, find available time slots
-//     const doctorsWithAvailability = await Promise.all(doctors.map(async (doctor) => {
-//       const availableTimeSlots = await findAvailableTimeSlots(doctor._id.toString());
-//       return {
-//         ...doctor.toObject(),
-//         availableTimeSlots
-//       };
-//     }));
-
-//     return doctorsWithAvailability;
-//   } catch (err) {
-//     console.error(err);
-//     return [];
-//   }
-// };
-
-
-
-
-export const getDoctors = async () => {
-    try {
-        await connectMongo();
-        const doctor = await Doctor.find({});
-        return  doctor;
-    } catch (err) {
-        console.error(err);
-        return [];
-    }
-}

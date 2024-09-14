@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import AppointmentModal from "../modal/AppointmentModal";
+import { findAvailableTimeSlots } from "../../action/doctor";
 
 interface TimeSlot {
   start: string;
@@ -10,13 +11,13 @@ interface TimeSlot {
 
 interface AppointmentButtonProps {
   availableTimeSlots: TimeSlot[];
+  doctor_id: string;
 }
 
-const AppointmentButton: React.FC<AppointmentButtonProps> = ({ availableTimeSlots }) => {
+const AppointmentButton: React.FC<AppointmentButtonProps> = ({ doctor_id }) => {
 
   const [isShow, setShow] = useState<boolean>(false);
   const [selectDoctor, setSelectDoctor] = useState<TimeSlot[]>([]);
-  console.log("selectDoctor", selectDoctor);
 
   return (
     <div>
@@ -25,17 +26,12 @@ const AppointmentButton: React.FC<AppointmentButtonProps> = ({ availableTimeSlot
         onClick={async(e) => {
           e.preventDefault();
           e.stopPropagation();
-          if(!availableTimeSlots){
-            return
-          }
-         
-          await setSelectDoctor(availableTimeSlots);
           setShow(!isShow);
         }}
       >
         Book Appointment
       </button>
-      <AppointmentModal selectDoctor={selectDoctor} open={isShow} setOpen={setShow} />
+      <AppointmentModal doctor_id={doctor_id} selectDoctor={selectDoctor} open={isShow} setOpen={setShow} />
     </div>
   );
 };
