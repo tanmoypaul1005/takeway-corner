@@ -57,8 +57,6 @@ const generateTimeSlots = (intervalMinutes: number = 30): TimeSlot[] => {
   return slots;
 };
 
-
-
 export async function GET(request) {
   await connectMongo();
   const searchParams = request.nextUrl.searchParams;
