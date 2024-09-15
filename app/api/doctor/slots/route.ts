@@ -4,6 +4,7 @@ import Doctor from "../../../../models/Doctor";
 import connectMongo from "../../../../util/connectMongo";
 import mongoose from 'mongoose';
 
+
 export async function POST(request) {
   try{
     const new_doctor = await request.json();
