@@ -8,8 +8,9 @@ import {
   iVector,
 } from "../../../util/imageImports";
 import { Player } from "@lottiefiles/react-lottie-player";
-import AppointmentButton from "../../appointment/AppointmentButton";
+
 import { motion } from "framer-motion";
+import AppointmentButton from "@app/appointment/AppointmentButton";
 
 const Banner: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 "use client";
+import CommonButton from '@app/components/button/CommonButton';
 import React from 'react';
-import CommonButton from '../components/button/CommonButton';
 
 const  AppointmentButton :  React.FC= () => {
     return (

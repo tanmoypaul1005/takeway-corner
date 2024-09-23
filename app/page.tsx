@@ -1,7 +1,7 @@
-import Appointment from "./appointment/page";
-import Banner from "./components/banner/Banner";
-import TestimonialSlider from "./components/testimonials/TestimonialSlider";
-import Doctor from "./doctor/page";
+import Appointment from '@app/appointment/page';
+import Banner from '@app/components/banner/Banner';
+import TestimonialSlider from '@app/components/testimonials/TestimonialSlider';
+import Doctor from '@app/doctor/page';
 
 const Home: React.FC = () => {
   return (
