@@ -5,6 +5,7 @@ import CommonInput from "../../components/input/CommonInput";
 import CommonDatePicker from "../../components/input/CommonDatePicker";
 import Image from "next/image";
 import { iCheck } from "../../../util/imageImports";
+import useSWR from 'swr'
 
 export interface TimeSlot {
   start: string;
@@ -25,6 +26,8 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   selectDoctor,
   doctor_id
 }) => {
+
+  
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const [formValues, setFormValues] = useState({
