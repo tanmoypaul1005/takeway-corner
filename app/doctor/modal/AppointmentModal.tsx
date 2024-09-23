@@ -23,6 +23,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   open,
   setOpen,
   selectDoctor,
+  doctor_id
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
