@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["@", "./src"]
+        ],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
+    }
+  }
 }
