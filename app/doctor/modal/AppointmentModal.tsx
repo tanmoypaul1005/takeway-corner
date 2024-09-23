@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CommonModal from "../../components/modal/ComonModal";
 import CommonInput from "../../components/input/CommonInput";
 import CommonDatePicker from "../../components/input/CommonDatePicker";
 import Image from "next/image";
 import { iCheck } from "../../../util/imageImports";
+import axios from "axios";
 
 // Define the fetcher function
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -25,12 +27,10 @@ interface AppointmentModalProps {
 const AppointmentModal: React.FC<AppointmentModalProps> = ({
   open,
   setOpen,
-  selectDoctor,
+  doctor_id,
 }) => {
 
-  
-
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [timeSlots, settimeSlots] = useState([])
 
   const [formValues, setFormValues] = useState({
     name: "",
@@ -40,6 +40,38 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
     start: null,
     end: null,
   });
+
+  const formatDate = (date: Date): string => {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  };
+
+  
+  useEffect(() => {
+    if (!formValues?.date && doctor_id) {
+      return;
+    }
+    const fetchData = async () => {
+      console.log("Doctor ID:", formatDate(formValues?.date));
+      const response = await axios.get(
+        `http://localhost:3000/api/doctor/slots`,
+        {
+          params: {
+            doctor_id: doctor_id,
+            date: formatDate(formValues?.date),
+          },
+        }
+      );
+      console.log("Doctor Slots:", response.data);
+      settimeSlots(response?.data?.timeSlots);
+      return response.data;
+    };
+    fetchData();
+  }, [formValues?.date])
+
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -106,7 +138,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
             Available Time Slots
           </div>
           <div className="flex flex-wrap gap-3">
-            {selectDoctor?.map((timeSlot: TimeSlot, index: number) => (
+            {timeSlots?.map((timeSlot: TimeSlot, index: number) => (
               <div
                 onClick={() => {
                   if (!timeSlot.available) {

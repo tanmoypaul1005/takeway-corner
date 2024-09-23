@@ -130,9 +130,10 @@ export async function GET(request) {
 
     // Check if the doctor is available on the given date
     const dayOfWeek = new Date(date).toLocaleString('en-US', { weekday: 'long' });
-    if (!doctor.availableDays.includes(dayOfWeek)) {
-      return Response.json({ error: "Doctor is not available on this day." }, { status: 400 });
-    }
+    // if (!doctor.availableDays.includes(dayOfWeek)) {
+    //   console.log("Doctor is not available on this day.",dayOfWeek);
+    //   return Response.json({ error: "Doctor is not available on this day." }, { status: 400 });
+    // }
 
     // Fetch the doctor's available time
     const { start, end } = doctor.availableTime;

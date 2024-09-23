@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import AppointmentModal from "../modal/AppointmentModal";
-import { findAvailableTimeSlots } from "../../action/doctor";
 
 interface TimeSlot {
   start: string;
@@ -31,7 +30,7 @@ const AppointmentButton: React.FC<AppointmentButtonProps> = ({ doctor_id }) => {
       >
         Book Appointment
       </button>
-      <AppointmentModal doctor_id={doctor_id} selectDoctor={selectDoctor} open={isShow} setOpen={setShow} />
+      <AppointmentModal doctor_id={doctor_id} open={isShow} setOpen={setShow} />
     </div>
   );
 };
