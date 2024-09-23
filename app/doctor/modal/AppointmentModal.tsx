@@ -6,6 +6,9 @@ import CommonDatePicker from "../../components/input/CommonDatePicker";
 import Image from "next/image";
 import { iCheck } from "../../../util/imageImports";
 
+// Define the fetcher function
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export interface TimeSlot {
   start: string;
   end: string;
@@ -23,8 +26,10 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
   open,
   setOpen,
   selectDoctor,
-  doctor_id
 }) => {
+
+  
+
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const [formValues, setFormValues] = useState({
