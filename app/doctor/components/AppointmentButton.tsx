@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import AppointmentModal from "../modal/AppointmentModal";
-import { findAvailableTimeSlots } from "../../action/doctor";
+
 
 interface TimeSlot {
   start: string;
