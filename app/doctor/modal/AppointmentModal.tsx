@@ -61,7 +61,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
       setOpen={setOpen}
       open={open}
       content={
-        <>
+        <div className="">
           <div>
             <div className="text-3xl font-bold text-center text-white">
               Book Appointment
@@ -96,8 +96,8 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 onChange={handleInputChange}
               />
               <CommonDatePicker
-                value={formValues.date}
-                onChange={handleDateChange}
+                // value={formValues.date}
+                // onChange={handleDateChange}
               />
             </div>
           </form>
@@ -152,7 +152,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({
               </div>
             ))}
           </div>
-        </>
+        </div>
       }
     />
   );
