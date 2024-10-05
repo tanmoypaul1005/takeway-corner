@@ -1,5 +1,7 @@
+import { iClock, iDelivery } from '@util/imageImports';
 import Image from 'next/image';
 import React from 'react';
+import { CiStopwatch } from "react-icons/ci";
 
 const FoodCard = () => {
   return (
@@ -16,7 +18,15 @@ const FoodCard = () => {
       <div className="p-4">
         <div className="text-lg font-semibold text-gray-800 md:text-xl">BFC- Jashim Uddin</div>
         <div className="text-sm font-normal text-gray-600 md:text-base">BFC- Jashim Uddin</div>
+        <div className='flex items-center gap-x-1'>
+        <Image width={18} height={18} src={iClock} alt=""/>
         <div className="text-sm font-normal text-gray-600 md:text-base">20-30 min</div>
+        </div>
+        <div className='flex items-center gap-x-1'>
+            <Image width={18} height={18} src={iDelivery} alt=""/>
+            <div className="text-base font-bold text-[#e21b70] md:text-base">Free</div>
+        </div>
+
       </div>
     </div>
   );
