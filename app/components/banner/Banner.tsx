@@ -34,12 +34,12 @@ const Banner: React.FC = () => {
         </p>
         {/* Lottie Animation */}
         <div className="flex items-start justify-start p-0 mb-5">
-          <Player
+          {/* <Player
             autoplay
             loop
             src={iBanner}
-            style={{ margin: "-20px", width: "100%", height: "50%" }}
-          />
+            style={{ marginTop: "-1px",  marginLeft:"-50px", minWidth: "80%",maxWidth:"80%", maxHeight: "30%",minHeight:"30%" }}
+          /> */}
         </div>
 
         <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
@@ -60,9 +60,15 @@ const Banner: React.FC = () => {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-[-20px] md:right-[40px] w-[50%]"
+          className="absolute top-[-0px] md:right-[-20px] w-[70%]"
         >
-          <Image src={iBannerDoctor} alt="Doctor" />
+          {/* <Image src={iBannerDoctor} alt="Doctor" /> */}
+          <Player
+            autoplay
+            loop
+            src={iBanner}
+            // style={{ minWidth: "80%",maxWidth:"80%", maxHeight: "50%",minHeight:"50%" }}
+          />
         </motion.div>
         <motion.div
           initial={{ scale: 0 }}
@@ -72,7 +78,7 @@ const Banner: React.FC = () => {
             repeat: Infinity, // Repeats endlessly
             repeatType: "mirror", // Mirror scale animation
           }}
-          className="absolute bottom-16 right-32 w-[50%]"
+          className="absolute bottom-16 right-44 w-[50%]"
         >
           <Image src={iProfessionals} alt="Doctor" />
         </motion.div>
@@ -85,7 +91,7 @@ const Banner: React.FC = () => {
             repeat: Infinity, // Repeats endlessly
             repeatType: "mirror", // Mirror scale animation
           }}
-          className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-28 right-12"
+          className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-8 right-10"
         >
           <div className="text-[#007E85] text-base font-bold">24/7</div>
           <div className="text-black">service</div>
