@@ -5,7 +5,7 @@ import { CiStopwatch } from "react-icons/ci";
 
 const FoodCard = () => {
   return (
-    <div className="overflow-hidden bg-white rounded-lg shadow-md">
+    <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative h-48">
         <Image
           alt="Food Image"
@@ -27,6 +27,14 @@ const FoodCard = () => {
             <div className="text-base font-bold text-[#e21b70] md:text-base">Free</div>
         </div>
 
+      </div>
+
+      <div className='absolute top-3 left-2 px-2 py-1 bg-[#e21b70] text-[12px] leading-5 font-semibold rounded-md'>
+        Gift : Free Delivery
+      </div>
+
+      <div className='absolute top-12 left-2 px-2 py-1 bg-[#e21b70] text-[12px] leading-5 font-semibold rounded-md'>
+        20% off
       </div>
     </div>
   );
