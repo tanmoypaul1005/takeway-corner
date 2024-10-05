@@ -1,9 +1,8 @@
 import { iClock, iDelivery } from '@util/imageImports';
 import Image from 'next/image';
 import React from 'react';
-import { CiStopwatch } from "react-icons/ci";
 
-const FoodCard = () => {
+const ShopCard = () => {
   return (
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative h-48">
@@ -40,4 +39,4 @@ const FoodCard = () => {
   );
 };
 
-export default FoodCard;
+export default ShopCard;
