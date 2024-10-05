@@ -9,7 +9,9 @@ const Home: React.FC = () => {
   <main className="space-y-10">
       <Banner/>
       <Food/>
+     <div className="flex items-center justify-center">
       <Offers/>
+      </div> 
       <Appointment/>
       <TestimonialSlider/>
       <div className="mb-10"></div>
