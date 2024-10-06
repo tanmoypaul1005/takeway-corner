@@ -32,7 +32,7 @@ const Banner: React.FC = () => {
           approach make us a leader in the healthcare industry.
         </p>
         {/* Lottie Animation */}
-        <div className="hidden p-0 md:flex">
+        <div className="">
           <Player
             autoplay
             loop

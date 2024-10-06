@@ -5,18 +5,16 @@ import Offers from "./offers/page";
 
 const Home: React.FC = () => {
   return (
-  <main className="space-y-10">
-      <Banner/>
-      <Food/>
-     <div className="flex items-center justify-center">
-      <Offers/>
-      </div> 
-
-      <TestimonialSlider/>
+    <main className="space-y-10">
+      <Banner />
+      <div className="flex items-center justify-center">
+        <Offers />
+      </div>
+      <Food />
+      <TestimonialSlider />
       <div className="mb-10"></div>
     </main>
   );
-}
-
+};
 
 export default Home;
