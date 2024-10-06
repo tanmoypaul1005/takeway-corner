@@ -21,3 +21,4 @@ export { default as iCheck } from "../public/common/check.png"
 
 //animation
 export { default as iBanner } from "../public/animation/banner.json"
+export { default as iMainBanner } from "../public/animation/main_banner.json"
