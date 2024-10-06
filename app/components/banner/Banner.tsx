@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import {
   iBanner,
-  iBannerDoctor,
   iMainBanner,
   iProfessionals,
   iVector,
@@ -33,7 +32,7 @@ const Banner: React.FC = () => {
           approach make us a leader in the healthcare industry.
         </p>
         {/* Lottie Animation */}
-        <div className="flex items-start justify-start p-0 mb-5">
+        <div className="flex items-center justify-center p-0 mb-5 md:items-start :justify-start">
           <Player
             autoplay
             loop
@@ -42,9 +41,7 @@ const Banner: React.FC = () => {
           />
         </div>
 
-        <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
-    
-        </div>
+        
       </div>
 
       <div className="relative flex items-center justify-center mt-20 md:mt-10 md:items-end md:justify-end">
@@ -62,7 +59,6 @@ const Banner: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="absolute top-[-0px] md:right-[-20px] w-[70%]"
         >
-          {/* <Image src={iBannerDoctor} alt="Doctor" /> */}
           <Player
             autoplay
             loop
