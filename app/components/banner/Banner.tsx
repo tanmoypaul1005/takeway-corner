@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import {
   iBanner,
-  iBannerDoctor,
   iMainBanner,
   iProfessionals,
   iVector,
@@ -33,68 +32,73 @@ const Banner: React.FC = () => {
           approach make us a leader in the healthcare industry.
         </p>
         {/* Lottie Animation */}
-        <div className="flex items-start justify-start p-0 mb-5">
+        <div className="hidden p-0 md:flex">
           <Player
             autoplay
             loop
             src={iMainBanner}
-            style={{ marginTop: "-30px",  marginLeft:"-30px", minWidth: "80%",maxWidth:"80%", maxHeight: "30%",minHeight:"30%" }}
+            style={{
+              marginTop: "-20px",
+              marginLeft: "-30px",
+              minWidth: "60%",
+              maxWidth: "60%",
+              maxHeight: "30%",
+              minHeight: "30%",
+            }}
           />
-        </div>
-
-        <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
-    
         </div>
       </div>
 
-      <div className="relative flex items-center justify-center mt-20 md:mt-10 md:items-end md:justify-end">
+      <div className="flex items-end justify-center md:justify-end">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="w-[60%]"
+          className="w-[80%] md:w-[60%]"
         >
-          <Image src={iVector} alt="Background Vector" />
-        </motion.div>
-        <motion.div
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-[-0px] md:right-[-20px] w-[70%]"
-        >
-          {/* <Image src={iBannerDoctor} alt="Doctor" /> */}
-          <Player
-            autoplay
-            loop
-            src={iBanner}
-            // style={{ minWidth: "80%",maxWidth:"80%", maxHeight: "50%",minHeight:"50%" }}
-          />
-        </motion.div>
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
-          transition={{
-            duration: 1,
-            repeat: Infinity, // Repeats endlessly
-            repeatType: "mirror", // Mirror scale animation
-          }}
-          className="absolute bottom-16 right-40 w-[50%]"
-        >
-          <Image src={iProfessionals} alt="Doctor" />
-        </motion.div>
+          <div className="relative">
+            <Image src={iVector} alt="Background Vector" />
+            <motion.div
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
+              className="absolute inset-0 flex items-center justify-center w-[100%]"
+            >
+              <Player
+                autoplay
+                loop
+                src={iBanner}
+                // style={{ minWidth: "80%",maxWidth:"80%", maxHeight: "50%",minHeight:"50%" }}
+              />
+            </motion.div>
 
-        <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
-          transition={{
-            duration: 1,
-            repeat: Infinity, // Repeats endlessly
-            repeatType: "mirror", // Mirror scale animation
-          }}
-          className="absolute flex px-3 py-2 space-x-1 bg-white rounded-md top-8 right-10"
-        >
-          <div className="text-[#007E85] text-base font-bold">24/7</div>
-          <div className="text-black">service</div>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
+              transition={{
+                duration: 1,
+                repeat: Infinity, // Repeats endlessly
+                repeatType: "mirror", // Mirror scale animation
+              }}
+              className="absolute hidden md:flex bottom-16 right-72 w-[50%]"
+            >
+              <Image src={iProfessionals} alt="Doctor" />
+            </motion.div>
+
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: [1, 1.1, 1] }} // Slight pulsating effect
+              transition={{
+                duration: 1,
+                repeat: Infinity, // Repeats endlessly
+                repeatType: "mirror", // Mirror scale animation
+              }}
+              className="absolute right-[-20px] flex px-2 py-2 space-x-1 bg-white rounded-md md:px-3 top-6 md:right-3"
+            >
+              <div className="text-[#007E85] text-base font-bold">24/7</div>
+              <div className="text-black">service</div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
