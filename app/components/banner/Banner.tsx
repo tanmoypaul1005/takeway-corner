@@ -4,11 +4,11 @@ import React from "react";
 import {
   iBanner,
   iBannerDoctor,
+  iMainBanner,
   iProfessionals,
   iVector,
 } from "../../../util/imageImports";
 import { Player } from "@lottiefiles/react-lottie-player";
-import AppointmentButton from "../../appointment/AppointmentButton";
 import { motion } from "framer-motion";
 
 const Banner: React.FC = () => {
@@ -34,16 +34,16 @@ const Banner: React.FC = () => {
         </p>
         {/* Lottie Animation */}
         <div className="flex items-start justify-start p-0 mb-5">
-          {/* <Player
+          <Player
             autoplay
             loop
-            src={iBanner}
-            style={{ marginTop: "-1px",  marginLeft:"-50px", minWidth: "80%",maxWidth:"80%", maxHeight: "30%",minHeight:"30%" }}
-          /> */}
+            src={iMainBanner}
+            style={{ marginTop: "-30px",  marginLeft:"-30px", minWidth: "80%",maxWidth:"80%", maxHeight: "30%",minHeight:"30%" }}
+          />
         </div>
 
         <div className="flex items-end justify-center h-full mt-3 md:mt-0 md:justify-start">
-          <AppointmentButton />
+    
         </div>
       </div>
 
@@ -78,7 +78,7 @@ const Banner: React.FC = () => {
             repeat: Infinity, // Repeats endlessly
             repeatType: "mirror", // Mirror scale animation
           }}
-          className="absolute bottom-16 right-44 w-[50%]"
+          className="absolute bottom-16 right-40 w-[50%]"
         >
           <Image src={iProfessionals} alt="Doctor" />
         </motion.div>
