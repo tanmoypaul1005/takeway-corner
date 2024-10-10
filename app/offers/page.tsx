@@ -66,7 +66,6 @@ const Offers = () => {
           alt=""
           src="https://images.deliveryhero.io/image/fd-bd/campaign-assets/8cbc73d6-c067-11ee-a8ac-f26afdcc1f7e/desktop_tile_EnDQrA.png?height=240&quality=95&width=560&"
         />
-        
       </SwiperSlide>
       <SwiperSlide>
         <Image
