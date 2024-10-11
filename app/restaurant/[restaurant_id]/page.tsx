@@ -20,10 +20,10 @@ const Restaurant = () => {
             Kacchi Bhai - Gulshan
           </div>
           <div className="flex gap-x-1">
-            <div classNameName="text-[#e21b70] font-semibold text-sm">
+            <div className="text-[#e21b70] font-semibold text-sm">
               Free delivery
             </div>
-            <div classNameName="text-sm font-semibold line-through ">Tk 40</div>
+            <div className="text-sm font-semibold line-through ">Tk 40</div>
           </div>
           <div className="text-sm font-semibold text-white">4.5 (200+)</div>
         </div>
