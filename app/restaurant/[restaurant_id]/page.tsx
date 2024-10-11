@@ -28,51 +28,57 @@ const Restaurant = () => {
         </div>
       </div>
 
+      <div className="my-10">
+        <div className="text-xl font-semibold">🔥Popular</div>
+        <div className="mt-1 text-sm font-normal">Most ordered right now.</div>
+      </div>
+
       <div className="flex justify-between">
         <div className="flex flex-col gap-y-5">
-        <div className="mt-10 flex justify-between border-[1px] rounded  p-3">
-          <div className="">
-            <div className="text-xl font-bold">Basmati kacchi - 1:1</div>
-            <div className="text-base font-medium">TK 300</div>
+          <div className="flex justify-between border-[1px] rounded  p-3">
+            <div className="">
+              <div className="text-xl font-bold">Basmati kacchi - 1:1</div>
+              <div className="text-base font-medium">TK 300</div>
+              <div>
+                1:1 - Popular dish prepared of slow-cooked aromatic basmati rice
+                layered with potatoes, marinated mutton pcs, in a delicate blend
+                of whole spices
+              </div>
+            </div>
             <div>
-              1:1 - Popular dish prepared of slow-cooked aromatic basmati rice
-              layered with potatoes, marinated mutton pcs, in a delicate blend
-              of whole spices
+              <Image
+                className="rounded-md"
+                width={200}
+                height={200}
+                src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
+                alt=""
+              />
             </div>
           </div>
-          <div>
-            <Image
-              width={200}
-              height={200}
-              src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
-              alt=""
-            />
+
+          <div className=" flex justify-between border-[1px] rounded  p-3">
+            <div className="">
+              <div className="text-xl font-bold">Basmati kacchi - 1:1</div>
+              <div className="text-base font-medium">TK 300</div>
+              <div>
+                1:1 - Popular dish prepared of slow-cooked aromatic basmati rice
+                layered with potatoes, marinated mutton pcs, in a delicate blend
+                of whole spices
+              </div>
+            </div>
+            <div>
+              <Image
+                className="rounded-md"
+                width={200}
+                height={200}
+                src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
+                alt=""
+              />
+            </div>
           </div>
         </div>
 
-        <div className="mt-10 flex justify-between border-[1px] rounded  p-3">
-          <div className="">
-            <div className="text-xl font-bold">Basmati kacchi - 1:1</div>
-            <div className="text-base font-medium">TK 300</div>
-            <div>
-              1:1 - Popular dish prepared of slow-cooked aromatic basmati rice
-              layered with potatoes, marinated mutton pcs, in a delicate blend
-              of whole spices
-            </div>
-          </div>
-          <div>
-            <Image
-              width={200}
-              height={200}
-              src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
-              alt=""
-            />
-          </div>
-        </div>
-        </div>
-        <div className="w-[500px]">
-            
-        </div>
+        <div className="w-[500px]"></div>
       </div>
     </div>
   );
