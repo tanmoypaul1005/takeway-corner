@@ -1,7 +1,7 @@
 import React from "react";
 import ShopCard from "./components/ShopCard";
 
-const Shop = () => {
+const Restaurant = () => {
   return (
     <>
       <div className="">
@@ -45,4 +45,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default Restaurant;
