@@ -1,8 +1,8 @@
 import Banner from "@app/components/banner/Banner";
 import TestimonialSlider from "@app/components/testimonials/TestimonialSlider";
-import Food from "./shop/page";
 import Offers from "./offers/page";
 import Cuisines from "./cuisines/page";
+import Restaurant from "./restaurant/page";
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
         <Offers />
       </div>
       <Cuisines/>
-      <Food />
+      <Restaurant />
       <TestimonialSlider />
       <div className="mb-10"></div>
     </main>
