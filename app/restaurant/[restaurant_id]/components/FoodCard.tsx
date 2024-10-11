@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import { FaPlus } from "react-icons/fa6";
 
 const FoodCard = () => {
     return (
@@ -13,14 +14,18 @@ const FoodCard = () => {
             of whole spices
           </div>
         </div>
-        <div>
+        <div className='relative flex items-center justify-center'>
           <Image
             className="rounded-md"
-            width={200}
-            height={200}
+            width={220}
+            height={220}
             src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
             alt=""
           />
+
+          <div className='absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3'>
+          <FaPlus className='text-black' />
+          </div>
         </div>
       </div>
     )
