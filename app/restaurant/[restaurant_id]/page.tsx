@@ -9,23 +9,23 @@ const Restaurant = () => {
       <Breadcrumbs />
       <div className="flex gap-x-3 border-b-[1px] pb-5">
         <Image
-          classNameName="rounded-md"
+          className="rounded-md"
           width={150}
           height={150}
           src="https://images.deliveryhero.io/image/fd-bd/bd-logos/cw0gk-logo.jpg"
           alt=""
         />
-        <div classNameName="flex flex-col justify-center">
-          <div classNameName="text-2xl font-bold text-white">
+        <div className="flex flex-col justify-center">
+          <div className="text-2xl font-bold text-white">
             Kacchi Bhai - Gulshan
           </div>
-          <div classNameName="flex gap-x-1">
+          <div className="flex gap-x-1">
             <div classNameName="text-[#e21b70] font-semibold text-sm">
               Free delivery
             </div>
             <div classNameName="text-sm font-semibold line-through ">Tk 40</div>
           </div>
-          <div classNameName="text-sm font-semibold text-white">4.5 (200+)</div>
+          <div className="text-sm font-semibold text-white">4.5 (200+)</div>
         </div>
       </div>
 

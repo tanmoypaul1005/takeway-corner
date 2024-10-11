@@ -17,8 +17,8 @@ const FoodCard = () => {
         <div className='relative flex items-center justify-center'>
           <Image
             className="rounded-md"
-            width={220}
-            height={220}
+            width={250}
+            height={250}
             src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
             alt=""
           />
