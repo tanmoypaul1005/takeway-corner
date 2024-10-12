@@ -31,12 +31,12 @@ const CuisinesSlider = () => {
         },
         1024: {
           slidesPerView: 5,
-          spaceBetween: 40,
+          spaceBetween: 10,
         },
 
         1440: {
             slidesPerView: 6,
-            spaceBetween: 40,
+            spaceBetween: 10,
           },
       }}
       modules={[ Autoplay]}

@@ -1,5 +1,4 @@
 import React from "react";
-import CuisinesCard from "./components/CuisinesCard";
 import CuisinesSlider from "./components/CuisinesSlider";
 
 const Cuisines = () => {
