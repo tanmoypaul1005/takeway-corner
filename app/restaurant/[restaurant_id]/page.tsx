@@ -4,6 +4,55 @@ import React from "react";
 import FoodCard from "./components/FoodCard";
 
 const Restaurant = () => {
+
+  const category = [
+    {
+      id: 1,
+      name: "Specials",
+    },
+    {
+      id: 2,
+      name: "Kacchi",
+    },
+    {
+      id: 3,
+      name: "Biriyani",
+    },
+    {
+      id: 4,
+      name: "Polao Platter",
+    },
+    {
+      id: 5,
+      name: "Sides",
+    },
+    {
+      id: 6,
+      name: "Dessert",
+    },
+    {
+      id: 7,
+      name: "Beverage",
+    },
+    {
+      id: 5,
+      name: "Sides",
+    },
+    {
+      id: 6,
+      name: "Dessert",
+    },
+    {
+      id: 7,
+      name: "Beverage",
+    },
+    {
+      id: 5,
+      name: "Sides",
+    },
+ 
+ 
+  ]
   return (
     <div className="px-10 pb-10">
       <Breadcrumbs />
@@ -27,6 +76,16 @@ const Restaurant = () => {
           </div>
           <div className="text-sm font-semibold text-white">4.5 (200+)</div>
         </div>
+      </div>
+
+      <div className="rounded flex px-3 py-3 mt-10 overflow-x-auto shadow-lg gap-x-10 bg-[#0b1120]">
+        {
+          category.map((item) => (
+            <div key={item.id} className="text-white whitespace-nowrap">
+              {item.name}
+            </div>
+          ))
+        }
       </div>
 
       <div className="my-10">
