@@ -1,3 +1,4 @@
+import ShopCard from "@app/restaurant/components/ShopCard";
 import { iFilter } from "@util/imageImports";
 import Image from "next/image";
 import React from "react";
@@ -15,6 +16,18 @@ const CuisinesDetails = () => {
 
         <div className="p-2 rounded-md cursor-pointer hover:bg-gray-500">
             Clear all
+        </div>
+      </div>
+
+      <div className="mt-10 ">
+        <div className="text-[32px] font-semibold leading-10 text-white mb-5">
+          Sweet tooth 🔥
+        </div>
+        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <ShopCard />
+          <ShopCard />
+          <ShopCard />
+          <ShopCard />
         </div>
       </div>
     </div>
