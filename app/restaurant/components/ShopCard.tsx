@@ -1,9 +1,11 @@
 import { iClock, iDelivery } from '@util/imageImports';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const ShopCard = () => {
   return (
+    <Link href={"/restaurant/1"}>
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative h-48">
         <Image
@@ -36,6 +38,7 @@ const ShopCard = () => {
         20% off
       </div>
     </div>
+    </Link>
   );
 };
 

@@ -6,7 +6,7 @@ const Cuisines = () => {
   return (
     <div>
       <div className="text-[32px] font-semibold leading-10 text-white mb-5">
-        Your favourite cuisines
+        Your favourite cuisines 🔥
       </div>
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7">

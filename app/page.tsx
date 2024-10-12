@@ -9,7 +9,9 @@ const Home: React.FC = () => {
     <main className="space-y-10">
       <Banner />
       <div className="">
-      <div className='text-[32px] font-semibold leading-10 text-white mb-5'>Your daily deals</div>
+      <div className='text-[32px] font-semibold leading-10 text-white mb-5'>
+        Your daily deals 🔥
+      </div>
         <Offers />
       </div>
       <Cuisines/>
