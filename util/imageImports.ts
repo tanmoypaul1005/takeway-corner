@@ -11,6 +11,7 @@ export { default as iCalender } from "../public/common/calender.svg";
 export { default as iCancel } from "../public/common/cancel.png";
 export { default as iDelivery } from "../public/food/delivery.png";
 export { default as iClock } from "../public/food/clock.png";
+export { default as iFilter } from "../public/common/filter.svg";
 
 export { default as iFacebookIcon } from "../public/footer/Facebook.svg";
 export { default as iTwitter } from "../public/footer/Twitter.svg"; 

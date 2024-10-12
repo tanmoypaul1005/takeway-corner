@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { iLogo } from "../../../util/imageImports";
 import MobileNav from "./MobileNav";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
     <div className="flex justify-between">
-      <Image src={iLogo} alt="Logo" />
+      <Link href="/"><Image src={iLogo} alt="Logo" /></Link>
 
       <div className="items-center justify-center hidden space-x-10 text-xl font-semibold md:flex">
         <div className="cursor-pointer">Home</div>
