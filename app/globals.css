@@ -71,7 +71,7 @@
   }
 }
 .common-class {
-  @apply w-full gap-8 px-5 mx-auto lg:px-0 lg:w-[88%];
+  @apply w-full gap-8 px-5 mx-auto lg:px-0 lg:w-[94%];
   min-height: auto;
 }
 body {
