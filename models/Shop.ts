@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema({
+const shopSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -30,4 +30,4 @@ const categorySchema = new mongoose.Schema({
  
 },{timestamps:true});
 
-export default mongoose?.models?.Shop || mongoose?.model('Shop', categorySchema);
+export default mongoose?.models?.Shop || mongoose?.model('Shop', shopSchema);
