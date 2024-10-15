@@ -11,6 +11,11 @@ const shopSchema = new mongoose.Schema({
         type: String,
         default:""
     },
+    banner:{
+        type: String,
+        default:""
+    },
+
 
     delivery_charge:{
         type: Number,
