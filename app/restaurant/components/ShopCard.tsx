@@ -9,6 +9,10 @@ const ShopCard = ({data}) => {
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative h-48">
         <Image
+          style={{
+            maxHeight:"192px",
+            minHeight:"192px"
+          }}
           alt="Food Image"
           src={data?.banner}
           layout="fill"
