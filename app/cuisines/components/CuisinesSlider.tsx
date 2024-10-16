@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
 import CuisinesCard from "./CuisinesCard";
 
-const CuisinesSlider = () => {
+const CuisinesSlider = ({cuisines=[]}) => {
   return (
     <Swiper
       spaceBetween={10}
@@ -42,7 +42,18 @@ const CuisinesSlider = () => {
       modules={[ Autoplay]}
       className="mySwiper"
     >
-      <SwiperSlide>
+
+      {
+        cuisines.map((cuisine, index) => (
+          <SwiperSlide key={index}>
+            <CuisinesCard
+              title={cuisine?.title}
+              img={cuisine?.image}
+            />
+          </SwiperSlide>
+        ))
+      }
+      {/* <SwiperSlide>
         <CuisinesCard
           title="Biryani"
           img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/193.png?height=192"
@@ -96,7 +107,7 @@ const CuisinesSlider = () => {
           title="Cafe"
           img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/77.png?height=192"
         />
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   );
 };
