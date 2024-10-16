@@ -10,3 +10,13 @@ export const fetchShop = async () => {
      return null
     }
 }
+
+export const fetchShopDetails = async (id) => {
+    try {
+        await connectMongo();
+        const shop = await Shop.findOne({_id:id});
+        return shop;
+    } catch (e) {
+     return null
+    }
+}

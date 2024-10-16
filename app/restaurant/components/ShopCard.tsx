@@ -5,7 +5,7 @@ import React from 'react';
 
 const ShopCard = ({data}) => {
   return (
-    <Link href={"/restaurant/1"}>
+    <Link href={`/restaurant/${data?._id}`}>
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
       <div className="relative h-48">
         <Image
