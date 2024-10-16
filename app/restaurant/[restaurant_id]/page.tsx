@@ -2,8 +2,9 @@ import Breadcrumbs from "@app/components/breadcrumbs/Breadcrumbs";
 import Image from "next/image";
 import React from "react";
 import FoodCard from "./components/FoodCard";
+import { fetchShopDetails } from "@app/action/shop";
 
-const Restaurant = () => {
+const Restaurant =async ({params}) => {
 
   const category = [
     {
@@ -53,6 +54,9 @@ const Restaurant = () => {
  
  
   ]
+  const shopDetails=await fetchShopDetails(params?.restaurant_id);
+  console.log("shopDetails",shopDetails)
+  
   return (
     <div className="px-10 pb-10">
       <Breadcrumbs />
@@ -61,12 +65,12 @@ const Restaurant = () => {
           className="rounded-md"
           width={150}
           height={150}
-          src="https://images.deliveryhero.io/image/fd-bd/bd-logos/cw0gk-logo.jpg"
+          src={shopDetails?.image}
           alt=""
         />
         <div className="flex flex-col justify-center">
           <div className="text-2xl font-bold text-white">
-            Kacchi Bhai - Gulshan
+             {shopDetails?.title}
           </div>
           <div className="flex gap-x-1">
             <div className="text-[#e21b70] font-semibold text-sm">
@@ -74,7 +78,7 @@ const Restaurant = () => {
             </div>
             <div className="text-sm font-semibold line-through ">Tk 40</div>
           </div>
-          <div className="text-sm font-semibold text-white">4.5 (200+)</div>
+          <div className="text-sm font-semibold text-white">{shopDetails?.ratting}.0 (200+)</div>
         </div>
       </div>
 

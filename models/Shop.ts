@@ -16,9 +16,13 @@ const shopSchema = new mongoose.Schema({
         default:""
     },
 
-
     delivery_charge:{
         type: Number,
+        default:""
+    },
+
+    ratting:{
+        type: Number ,
         default:""
     },
 
