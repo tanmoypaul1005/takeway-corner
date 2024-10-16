@@ -21,7 +21,7 @@ const ShopCard = ({data}) => {
         />
       </div>
       <div className="p-4">
-        <div className="text-lg font-semibold text-gray-800 md:text-xl">{data?.title}</div>
+        <div className="text-sm font-semibold text-gray-800 md:text-base">{data?.title}</div>
         {/* <div className="text-sm font-normal text-gray-600 md:text-base">BFC- Jashim Uddin</div> */}
         <div className='flex items-center gap-x-1'>
         <Image width={18} height={18} src={iClock} alt=""/>
