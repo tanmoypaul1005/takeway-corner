@@ -6,22 +6,6 @@ const categorySchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    icon:{
-        type: String,
-        default:""
-    },
-    banner:{
-        type: String,
-        default:""
-    },
-    status: {
-        type: String,
-        default:"sub_category"
-    },
-    parent_id:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category'
-    }
  
 },{timestamps:true});
 
