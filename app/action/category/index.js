@@ -1,6 +1,6 @@
 export const dynamic = "force-dynamic";
-import Category from "@/models/Category";
-import connectMongo from "@/util/connectMongo";
+import connectMongo from "@util/connectMongo";
+import Category from "models/Category";
 
 
 export const getCategory = async () => {

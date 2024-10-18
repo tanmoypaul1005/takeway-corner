@@ -3,59 +3,14 @@ import Image from "next/image";
 import React from "react";
 import FoodCard from "./components/FoodCard";
 import { fetchShopDetails } from "@app/action/shop";
+import { getCategory } from "@app/action/category";
 
 const Restaurant =async ({params}) => {
 
-  const category = [
-    {
-      id: 1,
-      name: "Specials",
-    },
-    {
-      id: 2,
-      name: "Kacchi",
-    },
-    {
-      id: 3,
-      name: "Biriyani",
-    },
-    {
-      id: 4,
-      name: "Polao Platter",
-    },
-    {
-      id: 5,
-      name: "Sides",
-    },
-    {
-      id: 6,
-      name: "Dessert",
-    },
-    {
-      id: 7,
-      name: "Beverage",
-    },
-    {
-      id: 5,
-      name: "Sides",
-    },
-    {
-      id: 6,
-      name: "Dessert",
-    },
-    {
-      id: 7,
-      name: "Beverage",
-    },
-    {
-      id: 5,
-      name: "Sides",
-    },
- 
- 
-  ]
   const shopDetails=await fetchShopDetails(params?.restaurant_id);
   console.log("shopDetails",shopDetails)
+
+  const category=await getCategory(); 
   
   return (
     <div className="px-10 pb-10">
@@ -86,7 +41,7 @@ const Restaurant =async ({params}) => {
         {
           category.map((item) => (
             <div key={item.id} className="text-white whitespace-nowrap">
-              {item.name}
+              {item.title}
             </div>
           ))
         }
