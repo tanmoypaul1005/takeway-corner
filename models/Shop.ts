@@ -30,6 +30,10 @@ const shopSchema = new mongoose.Schema({
         type: String,
         default:""
     },
+    categories: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Category'
+    }],
 
     type: {
         type: String,
