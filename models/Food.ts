@@ -38,4 +38,4 @@ const foodSchema = new mongoose.Schema({
     },
 },{timestamps:true});
 
-export default mongoose?.models?.Cuisines || mongoose?.model('Cuisines', foodSchema);
+export default mongoose?.models?.Cuisines || mongoose?.model('Food', foodSchema);

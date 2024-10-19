@@ -3,14 +3,11 @@ import Image from "next/image";
 import React from "react";
 import FoodCard from "./components/FoodCard";
 import { fetchShopDetails } from "@app/action/shop";
-import { getCategory } from "@app/action/category";
+
 
 const Restaurant =async ({params}) => {
 
   const shopDetails=await fetchShopDetails(params?.restaurant_id);
-  console.log("shopDetails",shopDetails)
-
-  const category=await getCategory(); 
   
   return (
     <div className="px-10 pb-10">
