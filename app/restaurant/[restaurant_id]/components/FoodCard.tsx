@@ -2,16 +2,14 @@ import Image from 'next/image'
 import React from 'react'
 import { FaPlus } from "react-icons/fa6";
 
-const FoodCard = () => {
+const FoodCard = ({item}) => {
     return (
         <div className="flex justify-between border-[1px] rounded  p-3">
         <div className="">
-          <div className="text-xl font-bold">Basmati kacchi - 1:1</div>
-          <div className="text-base font-medium">TK 300</div>
+          <div className="text-xl font-bold">{item?.title}</div>
+          <div className="text-base font-medium">TK {item?.price}</div>
           <div>
-            1:1 - Popular dish prepared of slow-cooked aromatic basmati rice
-            layered with potatoes, marinated mutton pcs, in a delicate blend
-            of whole spices
+              {item?.description}
           </div>
         </div>
         <div className='relative flex items-center justify-center'>
@@ -19,7 +17,7 @@ const FoodCard = () => {
             className="rounded-md"
             width={250}
             height={250}
-            src="https://images.deliveryhero.io/image/fd-bd/Products/2046151.jpg?width=%s"
+            src={item?.image}
             alt=""
           />
 
