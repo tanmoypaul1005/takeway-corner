@@ -7,6 +7,16 @@ const foodSchema = new mongoose.Schema({
         trim: true
     },
 
+    price:{
+        type: Number,
+        required: true,
+    },
+
+    description:{
+        type: String,
+        required: true,
+    },
+
     categories: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
@@ -15,6 +25,11 @@ const foodSchema = new mongoose.Schema({
     cuisines: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Cuisines'
+    },
+
+    shop: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Shop'
     },
 
     image:{
