@@ -1,7 +1,6 @@
 import Breadcrumbs from "@app/components/breadcrumbs/Breadcrumbs";
 import Image from "next/image";
 import React from "react";
-import FoodCard from "./components/FoodCard";
 import { fetchShopDetails } from "@app/action/shop";
 import FoodItemList from "./components/FoodItemList";
 
