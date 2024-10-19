@@ -7,7 +7,7 @@ export async function POST(request) {
     try {
         await connectMongo();
         const body = await request.json();
-        console.log("body", body);
+    
 
         const shopId = body.shopId;
         const category= body.category;

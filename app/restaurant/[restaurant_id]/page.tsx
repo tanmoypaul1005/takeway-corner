@@ -39,7 +39,7 @@ const Restaurant =async ({params}) => {
 
       <div className="rounded flex px-3 py-3 mt-10 overflow-x-auto shadow-lg gap-x-10 bg-[#0b1120]">
         {
-          category.map((item) => (
+          shopDetails?.categories?.map((item) => (
             <div key={item.id} className="text-white whitespace-nowrap">
               {item.title}
             </div>

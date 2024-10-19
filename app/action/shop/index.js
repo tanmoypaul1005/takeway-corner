@@ -4,7 +4,7 @@ import connectMongo from "util/connectMongo"
 export const fetchShop = async () => {
     try {
         await connectMongo();
-        const shop = await Shop.find();
+        const shop = await Shop.find({})
         return shop;
     } catch (e) {
      return null
@@ -14,7 +14,7 @@ export const fetchShop = async () => {
 export const fetchShopDetails = async (id) => {
     try {
         await connectMongo();
-        const shop = await Shop.findOne({_id:id});
+        const shop = await Shop.findOne({ _id: id }).populate('categories');
         return shop;
     } catch (e) {
      return null
