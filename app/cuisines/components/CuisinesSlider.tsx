@@ -49,65 +49,11 @@ const CuisinesSlider = ({cuisines=[]}) => {
             <CuisinesCard
               title={cuisine?.title}
               img={cuisine?.image}
+              id={cuisine?._id}
             />
           </SwiperSlide>
         ))
       }
-      {/* <SwiperSlide>
-        <CuisinesCard
-          title="Biryani"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/193.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Pizza"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/73.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Burgers"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/85.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Cakes"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/77.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Breakfast"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/193.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Pasta"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/73.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Khichuri"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/85.png?height=192"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        {" "}
-        <CuisinesCard
-          title="Cafe"
-          img="https://images.deliveryhero.io/image/foodpanda/cuisine-images/BD/77.png?height=192"
-        />
-      </SwiperSlide> */}
     </Swiper>
   );
 };
