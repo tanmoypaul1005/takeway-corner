@@ -34,7 +34,6 @@ const shopSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category'
     }],
-
     type: {
         type: String,
         enum: ["Restaurant", "Cafe", "Bakery", "Fast Food", "Grocery", "Sweet tooth", "Homechefs"],

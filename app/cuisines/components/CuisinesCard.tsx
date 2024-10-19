@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const CuisinesCard = ({ img = "", title }) => {
+const CuisinesCard = ({ img = "", title,id }) => {
   return (
-    <Link href="/cuisines/1">
+    <Link href={`/cuisines/${id}`}>
       <div className="flex flex-col items-center justify-center">
         <Image
           className="rounded-lg"

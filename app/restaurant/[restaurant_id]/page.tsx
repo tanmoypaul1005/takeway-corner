@@ -3,14 +3,11 @@ import Image from "next/image";
 import React from "react";
 import FoodCard from "./components/FoodCard";
 import { fetchShopDetails } from "@app/action/shop";
-import { getCategory } from "@app/action/category";
+import FoodItemList from "./components/FoodItemList";
 
 const Restaurant =async ({params}) => {
 
   const shopDetails=await fetchShopDetails(params?.restaurant_id);
-  console.log("shopDetails",shopDetails)
-
-  const category=await getCategory(); 
   
   return (
     <div className="px-10 pb-10">
@@ -54,10 +51,7 @@ const Restaurant =async ({params}) => {
 
       <div className="grid w-full grid-cols-12 gap-x-7">
         <div className="flex flex-col col-span-8 gap-y-5">
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
-          <FoodCard />
+          <FoodItemList id={params?.restaurant_id}/>
         </div>
 
         <div className="w-full col-span-4 font-sans">
