@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 const FoodCard = ({item}) => {
     return (
         <div className="flex justify-between border-[1px] rounded  p-3">
-        <div className="">
+        <div className="flex flex-col justify-center">
           <div className="text-xl font-bold">{item?.title}</div>
           <div className="text-base font-medium">TK {item?.price}</div>
           <div>
@@ -15,8 +15,8 @@ const FoodCard = ({item}) => {
         <div className='relative flex items-center justify-center'>
           <Image
             className="rounded-md"
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             src={item?.image}
             alt=""
           />

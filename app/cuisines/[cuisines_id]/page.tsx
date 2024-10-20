@@ -28,7 +28,7 @@ const CuisinesDetails = async({params}) => {
         <div className="text-[32px] font-semibold leading-10 text-white mb-5">
           Sweet tooth 🔥
         </div>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-col gap-y-5">
           {
             foodItems?.map((item,index) => (
               <FoodCard key={index} item={item} />
