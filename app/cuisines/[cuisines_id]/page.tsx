@@ -1,9 +1,15 @@
+import { fetchCuisinesFood } from "@app/action/cuisines";
 import ShopCard from "@app/restaurant/components/ShopCard";
 import { iFilter } from "@util/imageImports";
 import Image from "next/image";
 import React from "react";
 
-const CuisinesDetails = () => {
+const CuisinesDetails = async({params}) => {
+
+  const foodItems= await fetchCuisinesFood(params?.cuisines_id);
+
+  console.log(foodItems);
+  
   return (
     <div className="my-10">
       <div className="border-[1px] flex justify-between rounded-xl p-5">
@@ -24,10 +30,11 @@ const CuisinesDetails = () => {
           Sweet tooth 🔥
         </div>
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
-          <ShopCard />
+          {
+            foodItems?.map((item) => (
+              <ShopCard key={item.id} data={item} />
+            ))  
+          }
         </div>
       </div>
     </div>
