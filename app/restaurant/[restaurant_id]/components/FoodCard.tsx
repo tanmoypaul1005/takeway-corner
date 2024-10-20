@@ -5,12 +5,15 @@ import { FaPlus } from "react-icons/fa6";
 import FoodCardDetailsModal from "./FoodCardDetailsModal";
 
 const FoodCard = ({ item }) => {
+
   const [isModal, setModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   return (
     <div
       className="cursor-pointer"
       onClick={() => {
+        setSelectedItem(item);
         setModal(true);
       }}
     >
@@ -34,7 +37,7 @@ const FoodCard = ({ item }) => {
           </div>
         </div>
       </div>
-      <FoodCardDetailsModal isModal={isModal} setModal={setModal} />
+      <FoodCardDetailsModal selectedItem={selectedItem} isModal={isModal} setModal={setModal} />
     </div>
   );
 };
