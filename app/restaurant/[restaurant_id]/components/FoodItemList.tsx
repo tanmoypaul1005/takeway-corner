@@ -6,8 +6,6 @@ const FoodItemList = async({id}) => {
 
   const foodItem=await fetchFood(id);
 
-  console.log(foodItem);
-
     return (
         <>
         {
