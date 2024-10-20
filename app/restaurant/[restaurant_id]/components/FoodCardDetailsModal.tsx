@@ -18,6 +18,12 @@ const FoodCardDetailsModal = ({ isModal, setModal, selectedItem }) => {
               src={selectedItem?.image}
               alt=""
             />
+
+            <div className="mt-4">
+                <div className="text-3xl font-bold">{selectedItem?.title}</div>
+                <div className="my-2 text-base font-medium">TK {selectedItem?.price}</div>
+                <div>{selectedItem?.description}</div>
+            </div>
           </div>
         }
       />
