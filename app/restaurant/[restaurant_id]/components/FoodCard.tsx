@@ -1,18 +1,29 @@
-import Image from 'next/image'
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
+import FoodCardDetailsModal from "./FoodCardDetailsModal";
 
-const FoodCard = ({item}) => {
-    return (
-        <div className="flex justify-between border-[1px] rounded  p-3">
+const FoodCard = ({ item }) => {
+
+  const [isModal, setModal] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  return (
+    <div
+      className="cursor-pointer"
+      onClick={() => {
+        setSelectedItem(item);
+        setModal(true);
+      }}
+    >
+      <div className="flex justify-between border-[1px] rounded  p-3">
         <div className="flex flex-col justify-center">
           <div className="text-xl font-bold">{item?.title}</div>
           <div className="text-base font-medium">TK {item?.price}</div>
-          <div>
-              {item?.description}
-          </div>
+          <div>{item?.description}</div>
         </div>
-        <div className='relative flex items-center justify-center'>
+        <div className="relative flex items-center justify-center">
           <Image
             className="rounded-md"
             width={200}
@@ -21,12 +32,14 @@ const FoodCard = ({item}) => {
             alt=""
           />
 
-          <div className='absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3'>
-          <FaPlus className='text-black' />
+          <div className="absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3">
+            <FaPlus className="text-black" />
           </div>
         </div>
       </div>
-    )
-}
+      <FoodCardDetailsModal selectedItem={selectedItem} isModal={isModal} setModal={setModal} />
+    </div>
+  );
+};
 
-export default FoodCard
+export default FoodCard;

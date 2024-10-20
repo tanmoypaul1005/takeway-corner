@@ -7,6 +7,8 @@ import FoodItemList from "./components/FoodItemList";
 const Restaurant =async ({params}) => {
 
   const shopDetails=await fetchShopDetails(params?.restaurant_id);
+
+  console.log("shopDetails" , shopDetails);
   
   return (
     <div className="px-10 pb-10">
