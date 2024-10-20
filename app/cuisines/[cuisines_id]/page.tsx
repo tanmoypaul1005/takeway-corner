@@ -1,14 +1,15 @@
-import { fetchCuisinesFood } from "@app/action/cuisines";
-import ShopCard from "@app/restaurant/components/ShopCard";
+import { fetchCuisinesDetails, fetchCuisinesFood } from "@app/action/cuisines";
+import FoodCard from "@app/restaurant/[restaurant_id]/components/FoodCard";
 import { iFilter } from "@util/imageImports";
 import Image from "next/image";
 import React from "react";
+import ClearAllButton from "./components/ClearAllButton";
 
 const CuisinesDetails = async({params}) => {
 
   const foodItems= await fetchCuisinesFood(params?.cuisines_id);
 
-  console.log(foodItems);
+  const cuisinesDetails= await fetchCuisinesDetails(params?.cuisines_id);
   
   return (
     <div className="my-10">
@@ -17,22 +18,20 @@ const CuisinesDetails = async({params}) => {
           <div className="relative "><Image src={iFilter} alt="" />
           <div className="absolute flex justify-center items-center right-[-6px] bottom-[-4px] bg-[#e21b70] p-1 rounded-full text-[10px] w-[16px] h-[16px]">1</div>
           </div>
-          <div>Filter:Pizza</div>
+          <div>Filter:{cuisinesDetails?.title}</div>
         </div>
 
-        <div className="p-2 rounded-md cursor-pointer hover:bg-gray-500">
-            Clear all
-        </div>
+        <ClearAllButton/>
       </div>
 
       <div className="mt-10 ">
         <div className="text-[32px] font-semibold leading-10 text-white mb-5">
           Sweet tooth 🔥
         </div>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="flex flex-col gap-y-5">
           {
-            foodItems?.map((item) => (
-              <ShopCard key={item.id} data={item} />
+            foodItems?.map((item,index) => (
+              <FoodCard key={index} item={item} />
             ))  
           }
         </div>

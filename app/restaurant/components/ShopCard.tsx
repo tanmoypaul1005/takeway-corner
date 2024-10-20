@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const ShopCard = ({data}) => {
+  console.log("data",data);
   return (
     <Link href={`/restaurant/${data?._id}`}>
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">
@@ -22,7 +23,6 @@ const ShopCard = ({data}) => {
       </div>
       <div className="p-4">
         <div className="text-sm font-semibold text-gray-800 md:text-base">{data?.title}</div>
-        {/* <div className="text-sm font-normal text-gray-600 md:text-base">BFC- Jashim Uddin</div> */}
         <div className='flex items-center gap-x-1'>
         <Image width={18} height={18} src={iClock} alt=""/>
         <div className="text-sm font-normal text-gray-600 md:text-base">{data?.delivery_time} min</div>
