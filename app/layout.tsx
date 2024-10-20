@@ -1,8 +1,9 @@
-  import { Inter } from "next/font/google";
-  import "./globals.css";
-  import Header from "./components/header/Header";
-  import React, { ReactNode } from "react";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import Header from "./components/header/Header";
+import React, { ReactNode } from "react";
 import Footer from "./components/footer/footer";
+import { Slide, ToastContainer } from 'react-toastify';
 
   const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,20 @@ import Footer from "./components/footer/footer";
     return (
       <html lang="en">
         <body className={`${inter.className}`}>
+        <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        transition={Slide}
+        theme="dark"
+        limit={2}
+      />
           <div className="common-class">
           <div className="mt-5 mb-16">
             <Header />
