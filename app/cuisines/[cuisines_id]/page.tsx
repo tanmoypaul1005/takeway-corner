@@ -3,14 +3,13 @@ import FoodCard from "@app/restaurant/[restaurant_id]/components/FoodCard";
 import { iFilter } from "@util/imageImports";
 import Image from "next/image";
 import React from "react";
+import ClearAllButton from "./components/ClearAllButton";
 
 const CuisinesDetails = async({params}) => {
 
   const foodItems= await fetchCuisinesFood(params?.cuisines_id);
 
   const cuisinesDetails= await fetchCuisinesDetails(params?.cuisines_id);
-
-  console.log("cuisinesDetails",cuisinesDetails);
   
   return (
     <div className="my-10">
@@ -22,9 +21,7 @@ const CuisinesDetails = async({params}) => {
           <div>Filter:{cuisinesDetails?.title}</div>
         </div>
 
-        <div className="p-2 rounded-md cursor-pointer hover:bg-gray-500">
-            Clear all
-        </div>
+        <ClearAllButton/>
       </div>
 
       <div className="mt-10 ">
