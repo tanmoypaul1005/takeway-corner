@@ -13,6 +13,17 @@ export const fetchCuisines = async () => {
 }
 
 
+export const fetchCuisinesDetails = async (cuisinesId) => {
+    try {
+        await connectMongo();
+        const cuisines = await Cuisines.findOne({_id:cuisinesId});
+        return cuisines;
+    } catch (e) {
+     return null
+    }
+}
+
+
 export const fetchCuisinesFood = async (cuisinesId) => {
     try {
         await connectMongo();
