@@ -1,19 +1,17 @@
-
 import connectMongo from "@util/connectMongo";
 import Food from "models/Food";
 
-
 export async function POST(request) {
     try{
-      const new_food = await request.json();
+      const new_offer = await request.json();
       await connectMongo();
-      const newFood = new Food({...new_food});
-      const response = await newFood.save();
+      const newOffer = new Food({...new_offer});
+      const response = await newOffer.save();
   
       return Response.json({
         success: true,
         status: 200,
-        message: "Food Created Successfully",
+        message: "Offer Created Successfully",
         data: response,
       });
     }catch (err) {
