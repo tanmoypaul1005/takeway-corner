@@ -42,6 +42,12 @@ const OfferSlider = ({ offerList = [] }) => {
           <SwiperSlide key={index}>
             <Link href={`/offers/${item?._id}`}>
               <Image
+                style={{
+                  maxWidth: "100%",
+                  minWidth: "100%",
+                  maxHeight: "180px",
+                  minHeight: "180px",
+                }}
                 className="transition-transform duration-300 transform rounded-lg hover:scale-105"
                 width={500}
                 height={500}
