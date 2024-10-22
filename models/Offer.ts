@@ -1,16 +1,7 @@
 const mongoose = require('mongoose');
 
 const offerSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
-        trim: true
-      },
-      description: {
-        type: String,
-        required: true,
-        trim: true
-      },
+
       discountPercentage: {
         type: Number,
         required: true,
@@ -21,10 +12,19 @@ const offerSchema = new mongoose.Schema({
         type: String,
         default: true
       },
+
+      products:[
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Product'
+        }
+      ],
       isActive: {
         type: Boolean,
         default: true
       }
+
+
 },{timestamps:true});
 
 export default mongoose?.models?.Offer || mongoose?.model('Offer', offerSchema);
