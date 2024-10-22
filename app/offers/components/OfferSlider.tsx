@@ -37,13 +37,21 @@ const OfferSlider = ({ offerList = [] }) => {
       modules={[Pagination, Autoplay]}
       className="mySwiper"
     >
+      <div>
       {offerList?.map((item, index) => (
-        <SwiperSlide key={index}>
-          <Link href={`/offers/${item?._id}`}>
-          <Image width={500} height={500} alt="" src={item?.banner} />
-          </Link>
-        </SwiperSlide>
-      ))}
+          <SwiperSlide key={index}>
+            <Link href={`/offers/${item?._id}`}>
+              <Image
+                className="transition-transform duration-300 transform rounded-lg hover:scale-105"
+                width={500}
+                height={500}
+                alt=""
+                src={item?.banner}
+              />
+            </Link>
+          </SwiperSlide>
+        ))}
+      </div>
     </Swiper>
   );
 };
