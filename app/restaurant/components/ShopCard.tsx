@@ -18,7 +18,7 @@ const ShopCard = ({data}) => {
           src={data?.banner}
           layout="fill"
           objectFit="cover"
-          className="rounded-t-lg"
+          className="transition-transform duration-300 transform rounded-t-lg hover:scale-105"
         />
       </div>
       <div className="p-4">
