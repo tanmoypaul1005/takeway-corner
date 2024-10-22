@@ -6,7 +6,9 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
-    <div className="flex justify-between">
+    <div className="">
+      <div className="flex justify-between common-class">
+
       <Link href="/"><Image src={iLogo} alt="Logo" /></Link>
 
       <div className="items-center justify-center hidden space-x-10 text-xl font-semibold md:flex">
@@ -20,6 +22,7 @@ const Header: React.FC = () => {
       </div>
       <div className="flex md:hidden">
         <MobileNav />
+      </div>
       </div>
     </div>
   );
