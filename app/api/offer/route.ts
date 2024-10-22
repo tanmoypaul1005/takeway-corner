@@ -7,7 +7,7 @@ export async function POST(request) {
       await connectMongo();
       const newOffer = new Offer({...new_offer});
       const response = await newOffer.save();
-      console.log(response);
+    
       return Response.json({
         success: true,
         status: 200,
