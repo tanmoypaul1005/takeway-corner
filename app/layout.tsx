@@ -20,9 +20,8 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className="overflow-hidden">
         <ToastContainer
-          position="bottom-right"
           autoClose={2000}
           hideProgressBar={false}
           newestOnTop={false}
@@ -35,13 +34,15 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           theme="dark"
           limit={2}
         />
-        <div className="common-class">
-          <div className="mt-5 mb-16">
-            <Header />
-          </div>
-          {children}
+        <div className="fixed top-0 left-0 right-0 z-50 py-3">
+          <Header />
         </div>
-        <Footer />
+        <div className="h-screen pt-12 mt-[70px] overflow-y-auto border-t">
+          <div className="w-full common-class">
+            {children}
+          </div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
