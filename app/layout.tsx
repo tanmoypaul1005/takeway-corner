@@ -34,10 +34,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           theme="dark"
           limit={2}
         />
-        <div className="fixed top-0 left-0 right-0 z-50 py-3">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-black ">
           <Header />
         </div>
-        <div className="h-screen pt-12 mt-[70px] overflow-y-auto border-t">
+        <div className="h-screen pt-[110px] overflow-y-auto">
           <div className="w-full common-class">
             {children}
           </div>
@@ -49,3 +49,6 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
 };
 
 export default RootLayout;
+
+
+
