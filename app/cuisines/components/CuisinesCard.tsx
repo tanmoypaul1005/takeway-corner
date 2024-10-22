@@ -7,7 +7,7 @@ const CuisinesCard = ({ img = "", title,id }) => {
     <Link href={`/cuisines/${id}`}>
       <div className="flex flex-col items-center justify-center">
         <Image
-          className="rounded-lg"
+          className="transition-transform duration-300 transform rounded-lg hover:scale-105"
           width={150}
           height={150}
           src={img}
