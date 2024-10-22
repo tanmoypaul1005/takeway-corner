@@ -1,5 +1,4 @@
 import connectMongo from "@util/connectMongo";
-import Category from "models/Category";
 import Shop from "models/Shop";
 
 export async function POST(request) {
@@ -26,28 +25,18 @@ export async function POST(request) {
   }
 }
 
-
 export async function GET() {
   try {
 
     await connectMongo();
 
-    const shop = await Shop.findOne({ _id: "670ea0260426a364af4e5290" })
-
-
-    // Fetch category details
-    const categoryDetails = await Promise.all(
-      shop.categories.map(async (categoryId) => {
-        const category = await Category.findById(categoryId);
-        return category;
-      })
-    );
+    const shop = await Shop.find({ })
 
     return Response.json({
       success: true,
       status: 200,
       message: "Category Fetched Successfully",
-      data: { ...shop._doc, categories: categoryDetails },
+      data: shop
     });
   } catch (err) {
     console.error(err);
