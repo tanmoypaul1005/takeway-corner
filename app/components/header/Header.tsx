@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header: React.FC = () => {
   return (
-    <div className="">
+    <div className="py-2 shadow-md shadow-cyan-500/50">
       <div className="flex justify-between common-class">
 
       <Link href="/"><Image src={iLogo} alt="Logo" /></Link>
