@@ -19,7 +19,7 @@ const FoodCard = ({ item }) => {
     >
       <div className="flex justify-between border-[1px] border-cyan-500/50 rounded p-3">
         <div className="flex flex-col justify-center">
-          <div className="text-xl font-bold">{item?.title}</div>
+          <div className="text-2xl font-bold">{item?.title}</div>
           <div className="text-base font-medium">TK {item?.price}</div>
           <div>{item?.description}</div>
         </div>
