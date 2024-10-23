@@ -12,6 +12,10 @@ const offerSchema = new mongoose.Schema({
         type: String,
         default: true
       },
+      thumbnail:{
+        type: String,
+        default: true
+      },
 
       products:[
         {

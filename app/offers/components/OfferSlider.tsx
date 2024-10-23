@@ -52,7 +52,7 @@ const OfferSlider = ({ offerList = [] }) => {
                 width={500}
                 height={500}
                 alt=""
-                src={item?.banner}
+                src={item?.thumbnail}
               />
             </Link>
           </SwiperSlide>
