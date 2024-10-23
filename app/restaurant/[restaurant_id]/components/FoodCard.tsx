@@ -11,13 +11,13 @@ const FoodCard = ({ item }) => {
 
   return (
     <div
-      className="cursor-pointer"
+      className="shadow-md cursor-pointer"
       onClick={() => {
         setSelectedItem(item);
         setModal(true);
       }}
     >
-      <div className="flex justify-between border-[1px] rounded  p-3">
+      <div className="flex justify-between border-[1px] border-cyan-500/50 rounded p-3">
         <div className="flex flex-col justify-center">
           <div className="text-xl font-bold">{item?.title}</div>
           <div className="text-base font-medium">TK {item?.price}</div>
