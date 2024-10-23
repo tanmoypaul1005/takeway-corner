@@ -9,7 +9,7 @@ const OfferDetails = async ({ params }) => {
   
   return (
     <div>
-      <div className="flex items-center justify-center mb-20">
+      <div className="flex items-center justify-center">
       <Image
           src={offerDetails?.banner || '/fallback-image.jpg'} // Provide a fallback image URL
           alt="offer banner"
@@ -19,7 +19,7 @@ const OfferDetails = async ({ params }) => {
           className="object-cover w-full h-auto"
         />
       </div>
-      <div className="container">
+      <div className="container my-10">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {offerDetails?.shop?.map((item, index) => (
             <ShopCard key={index} data={item} />
