@@ -12,7 +12,7 @@ const CustomLayout = (props) => {
   return (
     <div>
       {pathname === "/login" || pathname === "/register" ? (
-        <>{props?.children}</>
+        <div className="">{props?.children}</div>
       ) : (
         <>
           <div className="fixed top-0 left-0 right-0 z-50 bg-black ">

@@ -21,7 +21,7 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className="overflow-hidden">
+      <body className="">
         <ToastContainer
           autoClose={2000}
           hideProgressBar={false}

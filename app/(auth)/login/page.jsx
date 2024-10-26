@@ -53,8 +53,8 @@ const Login = () => {
       </form> */}
 
 
-            <div className="flex justify-center h-screen overflow-y-auto text-gray-100 bg-gray-900"> 
-                <div className="flex justify-center flex-1 h-full m-0 shadow sm:m-10 sm:rounded-lg">
+            <div className="flex justify-center w-full overflow-y-auto text-gray-100 bg-gray-900 h-fit">  
+                <div className="flex justify-center flex-1 m-0 shadow sm:rounded-lg">
                     <div className="p-4 lg:w-1/2 xl:w-5/12 sm:p-12">
                         <div>
                             <img src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
@@ -103,7 +103,7 @@ const Login = () => {
                                     </button>
                                 </div>
 
-                                <div className="my-5 text-center border-b">
+                                <div className="my-8 text-center border-b">
                                     <div
                                         className="inline-block px-2 pb-8 text-sm font-medium leading-none tracking-wide text-white transform translate-y-1/2">
                                         Or sign up with e-mail
@@ -129,7 +129,7 @@ const Login = () => {
                                             Sign Up
                                         </span>
                                     </button>
-                                    <p className="mt-6 text-xs text-center text-gray-600">
+                                    <p className="mt-6 text-xs text-center text-white">
                                         I agree to abide by templatana's
                                         <a href="#" class="border-b border-gray-500 border-dotted">
                                             Terms of Service
@@ -152,7 +152,7 @@ const Login = () => {
                         ></div>
                     </div>
                 </div>
-            </div> 
+            </div>  
         </>
     );
 };
