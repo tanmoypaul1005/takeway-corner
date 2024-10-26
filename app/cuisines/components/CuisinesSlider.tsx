@@ -56,7 +56,7 @@ const CuisinesSlider = ({cuisines=[]}) => {
     >
 
       {
-        cuisines.map((cuisine, index) => (
+        cuisines?.map((cuisine, index) => (
           <SwiperSlide key={index}>
             <CuisinesCard
               title={cuisine?.title}
