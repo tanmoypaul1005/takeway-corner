@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const ShopCard = ({data}) => {
-  console.log("data",data);
+
   return (
     <Link href={`/restaurant/${data?._id}`}>
     <div className="relative overflow-hidden bg-white rounded-lg shadow-md">

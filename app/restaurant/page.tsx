@@ -5,8 +5,6 @@ const Restaurant = async() => {
 
   const shop =await fetchShop();
 
-  console.log("shop",shop)
-
   return (
     <>
       <RestaurantTypeList shop={shop} title="Sweet tooth"/>
