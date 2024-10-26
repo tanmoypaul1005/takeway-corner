@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import React, { ReactNode } from "react";
 import Footer from "./components/footer/footer";
 import { Slide, ToastContainer } from "react-toastify";
+import CustomLayout from "./components/layout/CustomLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,21 +35,14 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           theme="dark"
           limit={2}
         />
-        <div className="fixed top-0 left-0 right-0 z-50 bg-black ">
-          <Header />
-        </div>
-        <div className="h-screen pt-[110px] overflow-y-auto">
-          <div className="w-full common-class">
-            {children}
-          </div>
-          <Footer />
-        </div>
+        <CustomLayout>
+          <>
+          {children}
+          </>
+        </CustomLayout>
       </body>
     </html>
   );
 };
 
 export default RootLayout;
-
-
-
