@@ -4,6 +4,8 @@ import Header from "./components/header/Header";
 import React, { ReactNode } from "react";
 import Footer from "./components/footer/footer";
 import { Slide, ToastContainer } from "react-toastify";
+import CustomLayout from "./components/layout/CustomLayout";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,7 @@ interface RootLayoutProps {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
-      <body className="overflow-hidden">
+      <body className="">
         <ToastContainer
           autoClose={2000}
           hideProgressBar={false}
@@ -34,21 +36,16 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           theme="dark"
           limit={2}
         />
-        <div className="fixed top-0 left-0 right-0 z-50 bg-black ">
-          <Header />
-        </div>
-        <div className="h-screen pt-[110px] overflow-y-auto">
-          <div className="w-full common-class">
-            {children}
-          </div>
-          <Footer />
-        </div>
+        <SessionProvider>
+        <CustomLayout>
+          <>
+          {children}
+          </>
+        </CustomLayout>
+        </SessionProvider>
       </body>
     </html>
   );
 };
 
 export default RootLayout;
-
-
-

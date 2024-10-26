@@ -1,5 +1,6 @@
 import { toast, ToastOptions, TypeOptions } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import bcryptjs from 'bcryptjs';
 
 interface ToastrProps {
   message?: string;
@@ -15,6 +16,17 @@ export const Toastr = ({ message = "", type = "error" }: ToastrProps) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
-    type: type,
-  } as ToastOptions);
+  });
 };
+
+// Function to hash a password
+export async function hashPassword(password: string): Promise<string> {
+  const hashedPassword = await bcryptjs.hash(password, 12);
+  return hashedPassword;
+}
+
+// Function to verify a password
+export async function verifyPassword(password: any, hashedPassword: string): Promise<boolean> {
+  const isValid = await bcryptjs.compare(password, hashedPassword);
+  return isValid;
+}
