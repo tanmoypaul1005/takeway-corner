@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginButton = ({ login = false,title="" }) => {
   return (
-    <button class="tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-3 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+    <button className="flex items-center justify-center w-full py-3 font-semibold tracking-wide text-gray-100 transition-all duration-300 ease-in-out bg-indigo-500 rounded-lg hover:bg-indigo-700 focus:shadow-outline focus:outline-none">
       {!login && (
         <svg
           className="w-6 h-6 -ml-2"
