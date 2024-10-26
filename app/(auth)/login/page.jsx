@@ -55,7 +55,7 @@ const Login = () => {
 
             <div className="flex justify-center h-screen overflow-y-auto text-gray-100 bg-gray-900"> 
                 <div className="flex justify-center flex-1 h-full m-0 shadow sm:m-10 sm:rounded-lg">
-                    <div className="p-6 lg:w-1/2 xl:w-5/12 sm:p-12">
+                    <div className="p-4 lg:w-1/2 xl:w-5/12 sm:p-12">
                         <div>
                             <img src="https://storage.googleapis.com/devitary-image-host.appspot.com/15846435184459982716-LogoMakr_7POjrN.png"
                                 className="w-32 mx-auto" />
@@ -64,7 +64,7 @@ const Login = () => {
                             <h1 className="text-2xl font-extrabold xl:text-3xl">
                                 Sign up
                             </h1>
-                            <div className="flex-1 w-full mt-8">
+                            <div className="flex-1 w-full mt-6">
                                 <div className="flex flex-col items-center">
                                     <button
                                         className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
@@ -103,7 +103,7 @@ const Login = () => {
                                     </button>
                                 </div>
 
-                                <div className="my-6 text-center border-b">
+                                <div className="my-5 text-center border-b">
                                     <div
                                         className="inline-block px-2 pb-8 text-sm font-medium leading-none tracking-wide text-white transform translate-y-1/2">
                                         Or sign up with e-mail
@@ -112,13 +112,13 @@ const Login = () => {
 
                                 <div className="max-w-xs mx-auto">
                                     <input
-                                        className="w-full px-8 py-4 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
+                                        className="w-full px-8 py-3 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
                                         type="email" placeholder="Email" />
                                     <input
-                                        className="w-full px-8 py-4 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
+                                        className="w-full px-8 py-3 mt-5 text-sm font-medium placeholder-gray-500 bg-gray-100 border border-gray-200 rounded-lg focus:outline-none focus:border-gray-400 focus:bg-white"
                                         type="password" placeholder="Password" />
                                     <button
-                                        class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                        class="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-3 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                         <svg className="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
