@@ -5,6 +5,7 @@ import React, { ReactNode } from "react";
 import Footer from "./components/footer/footer";
 import { Slide, ToastContainer } from "react-toastify";
 import CustomLayout from "./components/layout/CustomLayout";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,11 +36,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           theme="dark"
           limit={2}
         />
+        <SessionProvider>
         <CustomLayout>
           <>
           {children}
           </>
         </CustomLayout>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -8,6 +8,7 @@ import LoginInput from "@app/components/input/LoginInput";
 import LoginButton from "@app/components/button/LoginButton";
 
 const Page = () => {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -35,7 +36,7 @@ const Page = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({name, email, password }),
         });
 
         const data = await response.json();
@@ -125,11 +126,11 @@ const Page = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col max-w-xs mx-auto gap-y-5">
+                                <form onSubmit={handleRegister} className="flex flex-col max-w-xs mx-auto gap-y-5">
 
                                     <LoginInput
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                         required
                                         placeholder="Enter a Name"
                                         type="text"
@@ -143,8 +144,8 @@ const Page = () => {
                                         type="email"
                                     />
                                     <LoginInput
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         required
                                         placeholder="Enter a Password"
                                         type="password"
@@ -161,7 +162,7 @@ const Page = () => {
                                             Privacy Policy
                                         </a>
                                     </p>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

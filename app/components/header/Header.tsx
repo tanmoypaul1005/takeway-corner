@@ -1,12 +1,13 @@
-"use client"
 import Image from "next/image";
 import React from "react";
 import { iLogo } from "../../../util/imageImports";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 const Header: React.FC = () => {
-
+  const { data: session, status } = useSession();
+  console.log("session",session)
   return (
     <div className="py-2 shadow-md shadow-cyan-500/50">
       <div className="flex justify-between common-class">

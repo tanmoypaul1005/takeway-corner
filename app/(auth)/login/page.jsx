@@ -79,7 +79,7 @@ const Login = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col max-w-xs mx-auto gap-y-5">
+                                <form onSubmit={handleSubmit} className="flex flex-col max-w-xs mx-auto gap-y-5">
 
                                     <LoginInput
                                         value={email}
@@ -89,8 +89,8 @@ const Login = () => {
                                         type="email"
                                     />
                                     <LoginInput
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
                                         required
                                         placeholder="Enter a Password"
                                         type="password"
@@ -106,7 +106,7 @@ const Login = () => {
                                             Privacy Policy
                                         </a>
                                     </p>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
