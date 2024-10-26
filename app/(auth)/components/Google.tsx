@@ -15,6 +15,7 @@ const Google = () => {
 
     return (
         <button
+        onClick={handleGoogleAuthClick}
         className="flex items-center justify-center w-full max-w-xs py-3 font-bold text-gray-800 transition-all duration-300 ease-in-out bg-indigo-100 rounded-lg shadow-sm focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
         <div className="p-2 bg-white rounded-full">
             <svg className="w-4" viewBox="0 0 533.5 544.3">
