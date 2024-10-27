@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import { signIn } from "next-auth/react";
+import { Toastr } from "@util/utilityFunctions";
 
 const Google = () => {
 
   const handleGoogleAuthClick = async () => {
     try {
       await signIn("google", { callbackUrl: "/" });
+      Toastr({ message: "Login successful!", type: "success" });
     } catch (error) {
       console.error("Error signing in", error);
     }
