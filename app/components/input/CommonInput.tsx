@@ -3,7 +3,7 @@ import React from "react";
 interface CommonInputProps {
   level?: string;
   type?: string;
-  placeHolder?: string;
+  placeholder?: string;
   required?: boolean;
   name?: string;
   value?: string;
@@ -13,7 +13,7 @@ interface CommonInputProps {
 const CommonInput: React.FC<CommonInputProps> = ({
   level = "",
   type = "text",
-  placeHolder = "",
+  placeholder = "",
   required = false,
   name = "",
   value = "",
@@ -29,7 +29,7 @@ const CommonInput: React.FC<CommonInputProps> = ({
         value={value}
         onChange={onChange}
         type={type}
-        placeholder={placeHolder}
+        placeholder={placeholder}
         className="w-full p-2 text-black border rounded-lg sm:p-3"
         required={required}
       />

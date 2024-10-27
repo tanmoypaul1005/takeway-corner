@@ -27,18 +27,20 @@ const AddressList = () => {
   ];
 
   return (
-    <div className="px-2 py-4 mt-8 space-y-3">
+    <div className="py-4 mt-8 space-y-3 ">
       {item?.map((item) => (
         <div
           onClick={() => setSelectedId(item._id)}
           key={item._id}
-          className={`flex flex-col w-full px-4 py-4 rounded-lg border-[3px] ${
+          className={`flex cursor-pointer flex-col w-full px-4 py-4 rounded-lg border-[3px] ${
             selectedId === item?._id ? "border-blue-800" : "border-gray-200"
           } `}
         >
           <div className="flex justify-between">
             <span className="font-semibold">{item.name}</span>
-{     selectedId === item?._id  &&        <FaCheck className="w-5 h-5 text-blue-800"/>}
+            {selectedId === item?._id && (
+              <FaCheck className="w-5 h-5 text-blue-800" />
+            )}
           </div>
           <span className="float-right text-gray-400">{item.size}</span>
           <p className="text-lg font-bold">{item.price}</p>
