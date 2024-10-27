@@ -6,6 +6,7 @@ import Google from "../components/Google";
 import Github from "../components/Github";
 import LoginInput from "@app/components/input/LoginInput";
 import LoginButton from "@app/components/button/LoginButton";
+import { Toastr } from "@util/utilityFunctions";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -20,10 +21,12 @@ const Login = () => {
             email,
             password,
         });
-
+        console.log(result)
         if (result.error) {
             setError(result.error);
+            // Toastr({ message: result.error, type: "error" });
         } else {
+            Toastr({ message: "Login Success", type: "success" });
             router.replace("/");
         }
     };
@@ -95,7 +98,7 @@ const Login = () => {
                                         placeholder="Enter a Password"
                                         type="password"
                                     />
-                                    <LoginButton title="Login" login={true}/>
+                                    <LoginButton title="Login" login={true} />
                                     <p className="text-xs text-center text-white ">
                                         I agree to abide by templatana's
                                         <a href="#" class="border-b border-gray-500 border-dotted">

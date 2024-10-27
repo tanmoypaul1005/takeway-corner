@@ -70,4 +70,7 @@ export const {
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET, // Add the secret here
+  pages: {
+    error: '/auth/error', // Redirect to a custom error page
+  },
 });

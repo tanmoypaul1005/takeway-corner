@@ -16,6 +16,7 @@ export const Toastr = ({ message = "", type = "error" }: ToastrProps) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
+    type: type,
   });
 };
 

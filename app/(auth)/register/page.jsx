@@ -43,8 +43,10 @@ const Page = () => {
 
         if (data.error) {
             setError(data.error);
+            Toastr({message:result.error, type: "error"});
         } else {
             router.replace("/login");
+            Toastr({message: "Register Success", type: "success"});
         }
     };
 
