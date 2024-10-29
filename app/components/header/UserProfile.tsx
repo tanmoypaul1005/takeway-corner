@@ -1,7 +1,6 @@
 "use client"
 import { Toastr } from "@util/utilityFunctions";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { IoIosLogOut } from "react-icons/io";
 import { signOut } from "next-auth/react";
