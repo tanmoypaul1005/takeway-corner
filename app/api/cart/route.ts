@@ -36,21 +36,28 @@ export async function POST(request) {
             });
         }
 
-        // if (!new_cart.user || !mongoose.Types.ObjectId.isValid(userId?._id)) {
+        // const findCart = await Cart.findOne({ user: userId?._id, food: new_cart.food });
+        // if (findCart) {
         //     return Response.json({
         //         success: false,
-        //         message: "Invalid user ID",
+        //         message: "Cart Already Exists",
         //         status: 400,
         //     });
         // }
 
-        const findCart = await Cart.findOne({ user: userId?._id, food: new_cart.food });
+        const findCart = await Cart.findOne({ user: userId, food: new_cart.food });
         if (findCart) {
-            return Response.json({
-                success: false,
-                message: "Cart Already Exists",
-                status: 400,
-            });
+          findCart.quantity += new_cart.quantity;
+          await findCart.save();
+          return new Response(
+            JSON.stringify({
+              success: true,
+              message: "Cart quantity updated successfully",
+              status: 200,
+              data: findCart,
+            }),
+            { status: 200 }
+          );
         }
 
         const _newCard={
