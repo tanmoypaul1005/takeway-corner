@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./components/header/Header";
 import React, { ReactNode } from "react";
-import Footer from "./components/footer/footer";
 import { Slide, ToastContainer } from "react-toastify";
 import CustomLayout from "./components/layout/CustomLayout";
 import { SessionProvider } from "next-auth/react";
