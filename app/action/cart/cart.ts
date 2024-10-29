@@ -1,3 +1,4 @@
+"use server"
 import connectMongo from "@util/connectMongo";
 import Cart from "models/Cart";
 import User from "models/User";
