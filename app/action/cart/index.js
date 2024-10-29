@@ -9,6 +9,7 @@ export const addCart = async (formData, pathName) => {
       },
       body: JSON.stringify(formData),
     });
+    console.log("res", res);
 
     if (!res.ok) {
       throw new Error("Network response was not ok");
@@ -16,8 +17,8 @@ export const addCart = async (formData, pathName) => {
     const data = await res.json();
 
     if (data?.success) {
-      revalidatePath(pathName);
       console.log("Success:", data?.message);
+      // revalidatePath(pathName);
       return data;
     } else {
       console.error("Error:", data?.message);

@@ -15,6 +15,7 @@ export async function POST(request) {
                 success: false,
                 message: "User not found",
                 status: 400,
+                data:new_cart?.email
             });
         }
 
@@ -35,15 +36,15 @@ export async function POST(request) {
             });
         }
 
-        if (!new_cart.user || !mongoose.Types.ObjectId.isValid(new_cart.user)) {
-            return Response.json({
-                success: false,
-                message: "Invalid user ID",
-                status: 400,
-            });
-        }
+        // if (!new_cart.user || !mongoose.Types.ObjectId.isValid(userId?._id)) {
+        //     return Response.json({
+        //         success: false,
+        //         message: "Invalid user ID",
+        //         status: 400,
+        //     });
+        // }
 
-        const findCart = await Cart.findOne({ user: new_cart.user, product: new_cart.product });
+        const findCart = await Cart.findOne({ user: userId?._id, food: new_cart.food });
         if (findCart) {
             return Response.json({
                 success: false,
@@ -52,8 +53,14 @@ export async function POST(request) {
             });
         }
 
-        const cart = new Cart(new_cart);
+        const _newCard={
+            quantity:new_cart.quantity,
+            food:new_cart.food,
+            user:userId?._id
+        }
+        const cart = new Cart({..._newCard});
         await cart.save();
+      
         return Response.json({
             success: true,
             message: "Cart Created Successfully",
