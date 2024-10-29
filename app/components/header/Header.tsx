@@ -4,7 +4,6 @@ import { iLogo } from "../../../util/imageImports";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import LogoutButton from "./LogoutButton";
 import UserProfile from "./UserProfile";
 import { FaCartPlus } from "react-icons/fa";
 

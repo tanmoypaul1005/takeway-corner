@@ -1,10 +1,21 @@
 import React from 'react'
 import CommonCart from './components/CommonCart'
+import AutoBreadcrumbs from '@app/components/breadcrumbs/AutoBreadcrumbs'
 
 const Cart = () => {
+
+    const breadcrumbsItem=[
+        { title: "Shop",status:"complete" },
+        { title: "Cart",status:"active" },
+        { title: "Checkout",status:"pending" },
+      ]
+
     return (
         <div className="py-4 mx-auto font-sans">
-            <h1 className="text-3xl font-bold text-center text-white">Shopping Cart</h1>
+                  <AutoBreadcrumbs
+        title="Shopping Cart"
+      items={breadcrumbsItem}/>
+            
 
             <div className="grid gap-8 mt-16 md:grid-cols-3">
                 <div className="space-y-4 md:col-span-2">

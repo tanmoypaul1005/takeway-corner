@@ -3,6 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import FoodCardDetailsModal from "./FoodCardDetailsModal";
+import { addCart } from "@app/action/cart";
+import { Toastr } from "@util/utilityFunctions";
 
 const FoodCard = ({ item }) => {
 
@@ -32,7 +34,19 @@ const FoodCard = ({ item }) => {
             alt=""
           />
 
-          <div className="absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3">
+          <div 
+          onClick={async(e)=>{
+            e.stopPropagation();
+           const success= await addCart();
+           console.log("success",success)
+          //  if(success?.success){
+          //   Toastr({message:success?.message,type:"success"})
+          //  }
+          //  else{
+          //   Toastr({message:success?.message,type:"error"})
+          //  }
+          }}
+          className="absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3">
             <FaPlus className="text-black" />
           </div>
         </div>
