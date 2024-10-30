@@ -109,7 +109,6 @@ export async function GET(request) {
             success: true,
             status: 200,
             message: "Cart Fetched Successfully",
-            // user: userId,
             data: cart
         });
     } catch (err) {
