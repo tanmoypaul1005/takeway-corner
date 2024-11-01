@@ -5,11 +5,13 @@ import { FaPlus } from "react-icons/fa6";
 import FoodCardDetailsModal from "./FoodCardDetailsModal";
 import { addCart } from "@app/action/cart";
 import { Toastr } from "@util/utilityFunctions";
+import { useSession } from "next-auth/react";
 
 const FoodCard = ({ item }) => {
 
   const [isModal, setModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const { data: session, status } = useSession();
 
   return (
     <div
@@ -37,14 +39,20 @@ const FoodCard = ({ item }) => {
           <div 
           onClick={async(e)=>{
             e.stopPropagation();
-           const success= await addCart();
+            const data={
+              food:item?._id,
+              quantity:1,
+              email:session?.user?.email
+            }
+            console.log("data",data)
+           const success= await addCart(data,window.location.pathname);
            console.log("success",success)
-          //  if(success?.success){
-          //   Toastr({message:success?.message,type:"success"})
-          //  }
-          //  else{
-          //   Toastr({message:success?.message,type:"error"})
-          //  }
+           if(success?.success){
+            Toastr({message:success?.message,type:"success"})
+           }
+           else{
+            Toastr({message:success?.message,type:"error"})
+           }
           }}
           className="absolute p-1 bg-white rounded-full cursor-pointer right-1 bottom-3">
             <FaPlus className="text-black" />

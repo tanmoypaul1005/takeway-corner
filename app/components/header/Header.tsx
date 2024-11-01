@@ -8,6 +8,7 @@ import UserProfile from "./UserProfile";
 import { FaCartPlus } from "react-icons/fa";
 
 const Header: React.FC = () => {
+  
   const { data: session, status } = useSession();
 
   return (
