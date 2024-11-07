@@ -7,7 +7,6 @@ import Link from "next/link";
 import { useSession } from "next-auth/react";
 import UserProfile from "./UserProfile";
 import { FaCartPlus } from "react-icons/fa";
-import { getCart } from "@app/action/cart";
 
 const Header: React.FC =() => {
   
