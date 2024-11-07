@@ -1,5 +1,5 @@
 "use server"
-import connectMongo from "@util/connectMongo";
+import useCartStore from "@util/stores/cartStore";
 import { revalidatePath } from "next/cache";
 
 export const addCart = async (formData, pathName) => {
@@ -20,7 +20,9 @@ export const addCart = async (formData, pathName) => {
 
     if (data?.success) {
       console.log("Success:", data?.message);
-       revalidatePath(pathName);
+      revalidatePath(pathName);
+      await getCart(formData.email);
+      await useCartStore.getState().setCartData(useCartStore.getState().cartData+1);
       return data;
     } else {
       console.error("Error:", data?.message);

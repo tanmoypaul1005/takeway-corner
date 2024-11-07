@@ -6,12 +6,15 @@ import FoodCardDetailsModal from "./FoodCardDetailsModal";
 import { addCart } from "@app/action/cart";
 import { Toastr } from "@util/utilityFunctions";
 import { useSession } from "next-auth/react";
+import { usePathname } from "next/navigation";
 
 const FoodCard = ({ item }) => {
 
   const [isModal, setModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const { data: session, status } = useSession();
+
+  const pathname=usePathname();
 
   return (
     <div
@@ -45,7 +48,7 @@ const FoodCard = ({ item }) => {
               email:session?.user?.email
             }
             console.log("data",data)
-           const success= await addCart(data,window.location.pathname);
+           const success= await addCart(data,pathname);
            console.log("success",success)
            if(success?.success){
             Toastr({message:success?.message,type:"success"})
